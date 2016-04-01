@@ -12,7 +12,7 @@ INSTALLED_APPS = ['wazimap_ug'] + INSTALLED_APPS
 
 # Localise this instance of Wazimap
 WAZIMAP['name'] = 'Wazimap Uganda'
-WAZIMAP['url'] = 'http://wazimap.example.com'
+WAZIMAP['url'] = 'http://openug.com'
 WAZIMAP['country_code'] = 'UG'
 WAZIMAP['profile_builder'] = 'wazimap_ug.profiles.get_profile'
 WAZIMAP['levels'] = {
@@ -26,12 +26,17 @@ WAZIMAP['levels'] = {
         },
     'district': {
         'plural': 'districts',
-        'children': [],
-        }
+        'children': ['sub_county'],
+        },
+    'sub_county': {
+        'plural': 'sub_counties',
+        'children': []
+    }
 }
 
 WAZIMAP['geometry_data'] = {
     'country': 'geo/country.topojson',
-    'region': 'geo/regions.topojson',
-    'district': 'geo/districts.topojson',
+    'region': 'geo/region.topojson',
+    'district': 'geo/district.topojson',
+    'sub_county': 'geo/sub_county.topojson',
     }
