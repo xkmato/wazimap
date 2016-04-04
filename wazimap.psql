@@ -398,45 +398,6 @@ ALTER SEQUENCE django_site_id_seq OWNED BY django_site.id;
 
 
 --
--- Name: population_data_2014; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
---
-
-CREATE TABLE population_data_2014 (
-    id bigint NOT NULL,
-    geo_level character varying(20) NOT NULL,
-    geo_code character varying(20) NOT NULL,
-    males bigint NOT NULL,
-    females bigint NOT NULL,
-    households bigint NOT NULL,
-    total_popn bigint NOT NULL,
-    reg_voters bigint NOT NULL
-);
-
-
-ALTER TABLE population_data_2014 OWNER TO postgres;
-
---
--- Name: population_data_2014_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE population_data_2014_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE population_data_2014_id_seq OWNER TO postgres;
-
---
--- Name: population_data_2014_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE population_data_2014_id_seq OWNED BY population_data_2014.id;
-
-
---
 -- Name: wazimap_geography; Type: TABLE; Schema: public; Owner: wazimap; Tablespace: 
 --
 
@@ -544,13 +505,6 @@ ALTER TABLE ONLY django_migrations ALTER COLUMN id SET DEFAULT nextval('django_m
 --
 
 ALTER TABLE ONLY django_site ALTER COLUMN id SET DEFAULT nextval('django_site_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY population_data_2014 ALTER COLUMN id SET DEFAULT nextval('population_data_2014_id_seq'::regclass);
 
 
 --
@@ -737,24 +691,24 @@ SELECT pg_catalog.setval('django_content_type_id_seq', 13, true);
 --
 
 COPY django_migrations (id, app, name, applied) FROM stdin;
-1	contenttypes	0001_initial	2016-03-10 11:35:59.399324+03
-2	auth	0001_initial	2016-03-10 11:36:00.525574+03
-3	admin	0001_initial	2016-03-10 11:36:00.768736+03
-4	admin	0002_logentry_remove_auto_add	2016-03-10 11:36:00.801844+03
-5	contenttypes	0002_remove_content_type_name	2016-03-10 11:36:00.846198+03
-6	auth	0002_alter_permission_name_max_length	2016-03-10 11:36:00.879425+03
-7	auth	0003_alter_user_email_max_length	2016-03-10 11:36:00.912659+03
-8	auth	0004_alter_user_username_opts	2016-03-10 11:36:00.93394+03
-9	auth	0005_alter_user_last_login_null	2016-03-10 11:36:00.968324+03
-10	auth	0006_require_contenttypes_0002	2016-03-10 11:36:00.979614+03
-11	auth	0007_alter_validators_add_error_messages	2016-03-10 11:36:00.998582+03
-12	sessions	0001_initial	2016-03-10 11:36:01.256913+03
-13	sites	0001_initial	2016-03-10 11:36:01.346012+03
-14	sites	0002_alter_domain_unique	2016-03-10 11:36:01.467987+03
-15	wazimap	0001_initial	2016-03-10 11:36:01.779133+03
-16	wazimap	0002_geography_long_name	2016-03-10 11:36:01.867742+03
-17	wazimap	0003_remove_geography_osm_area_id	2016-03-10 11:36:01.890133+03
-18	wazimap	0004_auto_20160302_1645	2016-03-10 11:36:01.912068+03
+1	contenttypes	0001_initial	2016-04-01 16:43:27.811086+03
+2	auth	0001_initial	2016-04-01 16:43:29.11202+03
+3	admin	0001_initial	2016-04-01 16:43:29.3671+03
+4	admin	0002_logentry_remove_auto_add	2016-04-01 16:43:29.400121+03
+5	contenttypes	0002_remove_content_type_name	2016-04-01 16:43:29.444602+03
+6	auth	0002_alter_permission_name_max_length	2016-04-01 16:43:29.477836+03
+7	auth	0003_alter_user_email_max_length	2016-04-01 16:43:29.511604+03
+8	auth	0004_alter_user_username_opts	2016-04-01 16:43:29.532513+03
+9	auth	0005_alter_user_last_login_null	2016-04-01 16:43:29.566566+03
+10	auth	0006_require_contenttypes_0002	2016-04-01 16:43:29.579043+03
+11	auth	0007_alter_validators_add_error_messages	2016-04-01 16:43:29.603125+03
+12	sessions	0001_initial	2016-04-01 16:43:29.855133+03
+13	sites	0001_initial	2016-04-01 16:43:29.968578+03
+14	sites	0002_alter_domain_unique	2016-04-01 16:43:30.112658+03
+15	wazimap	0001_initial	2016-04-01 16:43:30.501225+03
+16	wazimap	0002_geography_long_name	2016-04-01 16:43:30.579018+03
+17	wazimap	0003_remove_geography_osm_area_id	2016-04-01 16:43:30.601266+03
+18	wazimap	0004_auto_20160302_1645	2016-04-01 16:43:30.623199+03
 \.
 
 
@@ -790,257 +744,307 @@ SELECT pg_catalog.setval('django_site_id_seq', 1, true);
 
 
 --
--- Data for Name: population_data_2014; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY population_data_2014 (id, geo_level, geo_code, males, females, households, total_popn, reg_voters) FROM stdin;
-1	district	R3498102  	213443	222963	99401	436406	199928
-2	district	R3498083  	74405	76670	34520	151075	63513
-3	district	R3498093	49134	51337	21611	100471	44171
-4	district	R3501860  	48084	41876	25303	89960	37522
-5	district	R3498094  	81520	78555	35104	160075	67483
-6	district	R3501887  	30633	22773	20143	53406	29729
-7	district	R3501888	89362	94769	41606	184131	76578
-8	region	R3498103	722638	793572	418787	1516210	1014493
-9	district	R192796  	180541	189669	77405	370210	162880
-10	district	R3498002  	75339	73267	34108	148606	67012
-11	district	R3498003  	110580	103477	47965	214057	91087
-12	district	R3498105  	225728	232430	106235	458158	201671
-13	district	R3498084  	132197	143253	61923	275450	121563
-14	district	R3501898  	46703	47870	20855	94573	43967
-15	district	R3498085	144231	152418	75306	296649	139736
-16	district	R3498095  	165563	165703	80522	331266	144741
-17	district	R3498096  	125314	126198	60256	251512	110907
-18	district	R3498014  	346525	342294	151985	688819	281901
-19	district	R3501889  	291890	307927	145575	599817	292012
-20	district	R3498004  	104096	93607	43579	197703	87359
-21	district	R3497981  	92957	88906	36526	181863	74725
-22	district	R3501890  	253054	264954	117077	518008	223904
-23	district	R3498015	125395	127599	55538	252994	112087
-24	district	R3498106  	952781	1054919	504620	2007700	899877
-25	district	R3497424  	131533	139068	48402	270601	107956
-26	district	R3498159  	100196	108243	37247	208439	86834
-27	district	R3501974  	105938	105745	37028	211683	64729
-28	district	R3498135  	188462	201614	75921	390076	163027
-29	district	R3498172  	90796	98122	33058	188918	83448
-30	district	R3501836  	44770	44483	16599	89253	36052
-31	district	R3498161  	85837	91485	33992	177322	61920
-32	district	R3501859  	156308	169219	65487	325527	141800
-33	district	R3498136  	119068	126805	44311	245873	98707
-34	district	R3498117  	155253	165215	60818	320468	117618
-35	district	R3498110	242023	264365	102897	506388	222277
-36	district	R3498111  	227609	240647	105146	468256	233850
-37	district	R3497364  	104070	109304	38521	213374	89522
-38	district	R3498126  	115160	121767	43222	236927	93753
-39	district	R3498118  	236150	254105	93789	490255	200258
-40	district	R3501837  	51169	53411	21652	104580	48432
-41	district	R3497397  	80845	84708	30721	165553	70547
-42	district	R3498127	97008	105622	35867	202630	79919
-43	district	R3498173  	125289	132784	43964	258073	102223
-44	district	R3501838  	48579	47044	18238	95623	40044
-45	district	R3498112  	116590	124863	44994	241453	96708
-46	district	R3501861  	171745	181119	72740	352864	152973
-47	district	R3501862  	233077	246095	97513	479172	196170
-48	district	R3498160  	237610	255194	109537	492804	220340
-50	district	R3498128  	123011	130249	44465	253260	103296
-51	district	R3497398  	68217	74270	23540	142487	62952
-52	district	R3498129  	186722	199352	66802	386074	154537
-53	district	R3497399  	137657	145973	47471	283630	113142
-54	district	R3498162  	121989	124647	55390	246636	115360
-55	district	R3497400 	144408	152746	55195	297154	125841
-56	district	R3501864  	253653	272725	104366	526378	233437
-57	district	R3497425  	52963	56076	18297	109039	30494
-58	district	R3501791	111503	121310	41626	232813	64489
-59	district	R3497165	110095	117391	43274	227486	85759
-60	district	R3497363	109276	116051	45555	225327	97699
-61	district	R3497388	72492	74412	27885	146904	61127
-62	district	R3501835	58498	53260	15850	111758	36203
-63	district	R3501792	92502	98014	37899	190516	73223
-64	district	R3497126	180109	188677	71813	368786	152061
-65	district	R3501793	373762	411427	147483	785189	336384
-66	district	R3497127	88650	93929	34781	182579	79478
-67	district	R3497245	215610	228123	87687	443733	184791
-68	district	R3501829	79932	89342	29725	169274	50596
-69	district	R3501820	98438	105574	39959	204012	86477
-70	district	R3501821	102091	106072	30762	208163	78394
-71	district	R3490438	117439	124439	49092	241878	102200
-72	district	R3497438	85291	93618	26847	178909	50179
-73	district	R3501822	64577	69473	27497	134050	56872
-74	district	R3497128	196891	213625	89165	410516	182731
-75	district	R3501823	87278	98898	36466	186176	90711
-76	district	R3501830	50756	53783	22506	104539	32229
-77	district	R3501824	67937	69552	25894	137489	54521
-78	district	R3498251	82326	87365	26414	169691	46154
-79	district	R3497439	69086	76133	27471	145219	43605
-80	district	R3501825	184507	200713	75422	385220	173503
-81	district	R3497970	62899	65195	25114	128094	46836
-82	district	R3497166	51444	54173	22273	105617	41610
-83	district	R3497114	188704	199307	77435	388011	156398
-84	district	R3497167	88148	95575	34905	183723	70122
-85	district	R3501826	229811	255771	63722	485582	95905
-86	district	R3501827	115411	124957	50969	240368	101136
-87	district	R3498031	60309	63735	25707	124044	57847
-88	district	R3501794	58076	55493	21517	113569	38620
-89	district	R3501892	108020	116125	44769	224145	98977
-90	district	R3498054	114310	121311	52029	235621	124935
-91	district	R3501926	286705	287198	125907	573903	228918
-92	district	R3498029	120308	127775	54604	248083	123223
-93	district	R3501893	237549	254567	102970	492116	201965
-94	district	R3501894	252164	281996	119631	534160	271886
-95	district	R3498021	234869	239347	108179	474216	233385
-96	district	R3498030	205802	215668	90110	421470	173160
-97	district	R934530	120361	131714	56217	252075	129072
-98	district	R3501895	338796	363233	140697	702029	335164
-99	district	R3498022	389278	399436	168358	788714	322342
-100	district	R3498012	165266	163278	67484	328544	155073
-101	district	R3497965	133541	134647	52710	268188	107721
-103	district	R3498013	137860	139519	59332	277379	110312
-104	district	R3498023	209845	214146	92011	423991	186539
-105	district	R3497974	148264	144687	65090	292951	134501
-106	district	R3498063	229901	244243	113164	474144	242793
-107	district	R3498056	86612	98907	40142	185519	98981
-108	district	R3498024	33423	32999	13601	66422	32006
-109	district	R3501899	234244	255079	103232	489323	238334
-110	district	R3501896	61566	67717	28853	129283	63007
-111	district	R3501900	152376	168191	70853	320567	162020
-112	district	R3498055	100651	111069	47360	211720	111546
-\.
-
-
---
--- Name: population_data_2014_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('population_data_2014_id_seq', 1, false);
-
-
---
 -- Data for Name: wazimap_geography; Type: TABLE DATA; Schema: public; Owner: wazimap
 --
 
 COPY wazimap_geography (id, geo_level, geo_code, name, year, square_kms, parent_level, parent_code, long_name) FROM stdin;
-1	country	UG	Uganda	2011	\N	\N	\N	\N
-2	region	R3501931	Acholi	2011	\N	country	UG	\N
-3	region	R3251273	Central 1	2011	\N	country	UG	\N
-4	region	R3501932	Central 2	2011	\N	country	UG	\N
-5	region	R3501933	East Central	2011	\N	country	UG	\N
-6	region	R3501934	Elgon	2011	\N	country	UG	\N
-7	region	R3498103	Kampala	2011	\N	country	UG	\N
-8	region	R3501935	Karamoja	2011	\N	country	UG	\N
-9	region	R3501897	Kisoro	2011	\N	country	UG	\N
-10	region	R3497387	Lango	2011	\N	country	UG	\N
-11	region	R3501938	South Western	2011	\N	country	UG	\N
-12	region	R3501939	Teso	2011	\N	country	UG	\N
-13	region	R3501941	Western	2011	\N	country	UG	\N
-14	region	R3501940	West Nile	2011	\N	country	UG	\N
-15	district	R3497425	Abim	2011	\N	district	R3501935	\N
-16	district	R3501791	Adjumani	2011	\N	district	R3501940	\N
-17	district	R3497165	Agago	2011	\N	district	R3501931	\N
-18	district	R3497363	Alebtong	2011	\N	district	R3497387	\N
-19	district	R3497388	Amolatar	2011	\N	district	R3497387	\N
-20	district	R3501835	Amudat	2011	\N	district	R3501935	\N
-21	district	R3497424	Amuria	2011	\N	district	R3501939	\N
-22	district	R3501792	Amuru	2011	\N	district	R3501931	\N
-23	district	R3497126	Apac	2011	\N	district	R3497387	\N
-24	district	R3501793	Arua	2011	\N	district	R3501940	\N
-25	district	R3498159	Budaka	2011	\N	district	R3501939	\N
-26	district	R3501974	Bududa	2011	\N	district	R3501934	\N
-27	district	R3498135	Bugiri	2011	\N	district	R3501933	\N
-28	district	R3498031	Buhweju	2011	\N	district	R3501938	\N
-29	district	R3498102	Buikwe	2011	\N	district	R3501932	\N
-30	district	R3498172	Bukedea	2011	\N	district	R3501939	\N
-31	district	R3498083	Bukomansimbi	2011	\N	district	R3251273	\N
-32	district	R3501836	Bukwa	2011	\N	district	R3501934	\N
-33	district	R3498161	Bulambuli	2011	\N	district	R3501934	\N
-34	district	R3501794	Buliisa	2011	\N	district	R3501941	\N
-35	district	R3501892	Bundibugyo	2011	\N	district	R3501941	\N
-36	district	R3498054	Bushenyi	2011	\N	district	R3501938	\N
-37	district	R3501859	Busia	2011	\N	district	R3501933	\N
-38	district	R3498136	Butaleja	2011	\N	district	R3501934	\N
-39	district	R3498093	Butambala	2011	\N	district	R3251273	\N
-40	district	R3501860	Buvuma	2011	\N	district	R3501932	\N
-41	district	R3498117	Buyende	2011	\N	district	R3501933	\N
-42	district	R3497127	Dokolo	2011	\N	district	R3497387	\N
-43	district	R3498094	Gomba	2011	\N	district	R3251273	\N
-44	district	R3497245	Gulu	2011	\N	district	R3501931	\N
-45	district	R3501926	Hoima	2011	\N	district	R3501941	\N
-46	district	R3498029	Ibanda	2011	\N	district	R3501938	\N
-47	district	R3498110	Iganga	2011	\N	district	R3501933	\N
-48	district	R3501893	Isingiro	2011	\N	district	R3501938	\N
-49	district	R3498111	Jinja	2011	\N	district	R3501933	\N
-50	district	R3501829	Kaabong	2011	\N	district	R3501935	\N
-51	district	R3501894	Kabale	2011	\N	district	R3501938	\N
-52	district	R3498021	Kabarole	2011	\N	district	R3501941	\N
-53	district	R3497364	Kaberamaido	2011	\N	district	R3501939	\N
-54	district	R3501887	Kalangala	2011	\N	district	R3251273	\N
-55	district	R3498126	Kaliro	2011	\N	district	R3501933	\N
-56	district	R3501888	Kalungu	2011	\N	district	R3251273	\N
-57	district	R3498118	Kamuli	2011	\N	district	R3501933	\N
-58	district	R3498030	Kamwenge	2011	\N	district	R3501941	\N
-59	district	R934530	Kanungu	2011	\N	district	R3501938	\N
-60	district	R3501837	Kapchorwa	2011	\N	district	R3501934	\N
-61	district	R3501895	Kasese	2011	\N	district	R3501941	\N
-62	district	R3497397	Katakwi	2011	\N	district	R3501939	\N
-63	district	R3498104	Kayunga	2011	\N	district	R3501932	\N
-64	district	R3498022	Kibaale	2011	\N	district	R3501941	\N
-65	district	R3498002	Kiboga	2011	\N	district	R3501932	\N
-66	district	R3498127	Kibuku	2011	\N	district	R3501939	\N
-67	district	R3498012	Kiruhura	2011	\N	district	R3501938	\N
-68	district	R3497965	Kiryandongo	2011	\N	district	R3501941	\N
-69	district	R3501820	Kitgum	2011	\N	district	R3501931	\N
-70	district	R3501821	Koboko	2011	\N	district	R3501940	\N
-71	district	R3490438	Kole	2011	\N	district	R3497387	\N
-72	district	R3497438	Kotido	2011	\N	district	R3501935	\N
-73	district	R3498173	Kumi	2011	\N	district	R3501939	\N
-74	district	R3501838	Kween	2011	\N	district	R3501934	\N
-75	district	R3498003	Kyankwanzi	2011	\N	district	R3501932	\N
-76	district	R3498013	Kyegegwa	2011	\N	district	R3501941	\N
-77	district	R3498023	Kyenjojo	2011	\N	district	R3501941	\N
-78	district	R3501822	Lamwo	2011	\N	district	R3501931	\N
-79	district	R3497128	Lira	2011	\N	district	R3497387	\N
-80	district	R3498112	Luuka	2011	\N	district	R3501933	\N
-81	district	R3498105	Luweero	2011	\N	district	R3501932	\N
-82	district	R3498084	Lwengo	2011	\N	district	R3251273	\N
-83	district	R3501898	Lyantonde	2011	\N	district	R3251273	\N
-84	district	R3501861	Manafwa	2011	\N	district	R3501934	\N
-85	district	R3501823	Maracha	2011	\N	district	R3501940	\N
-86	district	R3498085	Masaka	2011	\N	district	R3251273	\N
-87	district	R3497974	Masindi	2011	\N	district	R3501941	\N
-88	district	R3501862	Mayuge	2011	\N	district	R3501933	\N
-89	district	R3498160	Mbale	2011	\N	district	R3501934	\N
-90	district	R3498063	Mbarara	2011	\N	district	R3501938	\N
-91	district	R3498056	Mitooma	2011	\N	district	R3501938	\N
-92	district	R3498095	Mityana	2011	\N	district	R3501932	\N
-93	district	R3501830	Moroto	2011	\N	district	R3501935	\N
-94	district	R3501824	Moyo	2011	\N	district	R3501940	\N
-95	district	R3498096	Mpigi	2011	\N	district	R3251273	\N
-96	district	R3498014	Mubende	2011	\N	district	R3501932	\N
-97	district	R3501889	Mukono	2011	\N	district	R3501932	\N
-98	district	R3498251	Nakapiripirit	2011	\N	district	R3501935	\N
-99	district	R3498004	Nakaseke	2011	\N	district	R3501932	\N
-100	district	R3497981	Nakasongola	2011	\N	district	R3501932	\N
-101	district	R3501863	Namiyango	2011	\N	district	R3501933	\N
-102	district	R3498128	Namutumba	2011	\N	district	R3501933	\N
-103	district	R3497439	Napak	2011	\N	district	R3501935	\N
-104	district	R3501825	Nebbi	2011	\N	district	R3501940	\N
-105	district	R3497398	Ngora	2011	\N	district	R3501939	\N
-106	district	R3498024	Ntoroko	2011	\N	district	R3501941	\N
-107	district	R3501899	Ntungamo	2011	\N	district	R3501938	\N
-108	district	R3497970	Nwoya	2011	\N	district	R3501931	\N
-109	district	R3497166	Otuke	2011	\N	district	R3497387	\N
-110	district	R3497114	Oyam	2011	\N	district	R3497387	\N
-111	district	R3497167	Pader	2011	\N	district	R3501931	\N
-112	district	R3498129	Pallisa	2011	\N	district	R3501939	\N
-113	district	R3501890	Rakai	2011	\N	district	R3251273	\N
-114	district	R3501896	Rubirizi	2011	\N	district	R3501938	\N
-115	district	R3501900	Rukungiri	2011	\N	district	R3501938	\N
-116	district	R3498015	Sembabule	2011	\N	district	R3251273	\N
-117	district	R3497399	Serere	2011	\N	district	R3501939	\N
-118	district	R3498055	Sheema	2011	\N	district	R3501938	\N
-119	district	R3498162	Sironko	2011	\N	district	R3501934	\N
-120	district	R3497400	Soroti	2011	\N	district	R3501939	\N
-121	district	R3501864	Tororo	2011	\N	district	R3501934	\N
-122	district	R3498106	Wakiso	2011	\N	district	R3501932	\N
+1	country	UG	Uganda	2014	\N	\N	\N	\N
+2	district	35	Kaberamaido	2014	\N	region	115	\N
+3	district	105	Maracha	2014	\N	region	116	\N
+4	district	39	Bukwo	2014	\N	region	115	\N
+5	district	2	Ibanda	2014	\N	region	115	\N
+6	district	112	Budaka	2014	\N	region	115	\N
+7	district	32	Katakwi	2014	\N	region	115	\N
+8	district	31	Jinja	2014	\N	region	115	\N
+9	district	57	Kabarole	2014	\N	region	117	\N
+10	district	52	Kaabong	2014	\N	region	116	\N
+11	district	82	Namayingo	2014	\N	region	115	\N
+12	district	21	Luwero	2014	\N	region	114	\N
+13	district	27	Wakiso	2014	\N	region	114	\N
+14	district	55	Hoima	2014	\N	region	117	\N
+15	district	12	Apac	2014	\N	region	116	\N
+16	district	19	Gomba	2014	\N	region	114	\N
+17	district	64	Kamwenge	2014	\N	region	117	\N
+18	district	50	Amolatar	2014	\N	region	116	\N
+19	district	18	Masaka	2014	\N	region	114	\N
+20	district	74	Buvuma	2014	\N	region	114	\N
+21	district	86	Kumi	2014	\N	region	116	\N
+22	district	6	Lira	2014	\N	region	116	\N
+23	district	17	Lwengo	2014	\N	region	114	\N
+24	district	97	Masindi	2014	\N	region	117	\N
+25	district	44	Adjumani	2014	\N	region	116	\N
+26	district	94	Napak	2014	\N	region	116	\N
+27	district	15	Lamwo	2014	\N	region	116	\N
+28	district	62	Ntungamo	2014	\N	region	117	\N
+29	district	13	Kole	2014	\N	region	116	\N
+30	district	99	Sheema	2014	\N	region	117	\N
+31	district	92	Bulambuli	2014	\N	region	115	\N
+32	district	95	Nebbi	2014	\N	region	116	\N
+33	district	5	Otuke	2014	\N	region	116	\N
+34	district	36	Amuria	2014	\N	region	116	\N
+35	district	79	Mukono	2014	\N	region	114	\N
+36	district	70	Kyegegwa	2014	\N	region	117	\N
+37	district	96	Zombo	2014	\N	region	116	\N
+38	district	80	Buikwe	2014	\N	region	114	\N
+39	district	28	Lyantonde	2014	\N	region	114	\N
+40	district	48	Yumbe	2014	\N	region	116	\N
+41	district	11	Pader	2014	\N	region	116	\N
+42	district	98	Kiryandongo	2014	\N	region	117	\N
+43	district	106	Ntoroko	2014	\N	region	117	\N
+44	district	43	Namutumba	2014	\N	region	115	\N
+45	district	111	Nakapiripirit	2014	\N	region	116	\N
+46	district	71	Luuka	2014	\N	region	115	\N
+47	district	58	Kasese	2014	\N	region	114	\N
+48	district	60	Kisoro	2014	\N	region	117	\N
+49	district	72	Iganga	2014	\N	region	115	\N
+50	district	4	Kiruhura	2014	\N	region	117	\N
+51	district	1	Kalangala	2014	\N	region	114	\N
+52	district	30	Nakaseke	2014	\N	region	114	\N
+53	district	68	Mpigi	2014	\N	region	114	\N
+54	district	93	Moroto	2014	\N	region	116	\N
+55	district	103	Bushenyi	2014	\N	region	117	\N
+56	district	25	Sembabule	2014	\N	region	114	\N
+57	district	104	Arua	2014	\N	region	116	\N
+58	district	59	Kibaale	2014	\N	region	117	\N
+59	district	8	Nwoya	2014	\N	region	116	\N
+60	district	66	Buliisa	2014	\N	region	117	\N
+61	district	20	Kampala	2014	\N	region	114	\N
+62	district	102	Mitooma	2014	\N	region	117	\N
+63	district	87	Serere	2014	\N	region	115	\N
+64	district	29	Mityana	2014	\N	region	114	\N
+65	district	49	Abim	2014	\N	region	116	\N
+66	district	101	Rubirizi	2014	\N	region	117	\N
+67	district	37	Bududa	2014	\N	region	115	\N
+68	district	14	Kitgum	2014	\N	region	116	\N
+69	district	7	Alebtong	2014	\N	region	116	\N
+70	district	47	Moyo	2014	\N	region	116	\N
+71	district	109	Kiboga	2014	\N	region	114	\N
+72	district	9	Amuru	2014	\N	region	116	\N
+73	district	51	Dokolo	2014	\N	region	116	\N
+74	district	46	Kotido	2014	\N	region	116	\N
+75	district	53	Koboko	2014	\N	region	116	\N
+76	district	10	Agago	2014	\N	region	116	\N
+77	district	22	Mubende	2014	\N	region	114	\N
+78	district	61	Mbarara	2014	\N	region	117	\N
+79	district	110	Amudat	2014	\N	region	116	\N
+80	district	78	Buyende	2014	\N	region	115	\N
+81	district	84	Ngora	2014	\N	region	115	\N
+82	district	41	Kaliro	2014	\N	region	115	\N
+83	district	67	Butambala	2014	\N	region	114	\N
+84	district	77	Kamuli	2014	\N	region	115	\N
+85	district	56	Kabale	2014	\N	region	117	\N
+86	district	83	Busia	2014	\N	region	115	\N
+87	district	40	Butaleja	2014	\N	region	115	\N
+88	district	90	Kapchorwa	2014	\N	region	115	\N
+89	district	42	Manafwa	2014	\N	region	115	\N
+90	district	69	Kyenjojo	2014	\N	region	117	\N
+91	district	89	Sironko	2014	\N	region	115	\N
+92	district	38	Bukedea	2014	\N	region	115	\N
+93	district	65	Kanungu	2014	\N	region	117	\N
+94	district	33	Mbale	2014	\N	region	115	\N
+95	district	91	Kween	2014	\N	region	116	\N
+96	district	107	Bundibugyo	2014	\N	region	117	\N
+97	district	63	Rukungiri	2014	\N	region	117	\N
+98	district	88	Soroti	2014	\N	region	115	\N
+99	district	54	Oyam	2014	\N	region	116	\N
+100	district	76	Pallisa	2014	\N	region	116	\N
+101	district	3	Isingiro	2014	\N	region	117	\N
+102	district	108	Kyankwanzi	2014	\N	region	114	\N
+103	district	24	Rakai	2014	\N	region	114	\N
+104	district	26	Kayunga	2014	\N	region	114	\N
+105	district	73	Mayuge	2014	\N	region	115	\N
+106	district	100	Buhweju	2014	\N	region	117	\N
+107	district	45	Gulu	2014	\N	region	116	\N
+108	district	34	Tororo	2014	\N	region	115	\N
+109	district	75	Kibuku	2014	\N	region	115	\N
+110	district	85	Kalungu	2014	\N	region	114	\N
+111	district	23	Nakasongola	2014	\N	region	114	\N
+112	district	16	Bukomansimbi	2014	\N	region	114	\N
+113	district	81	Bugiri	2014	\N	region	115	\N
+114	region	115	Eastern Uganda	2014	\N	country	UG	\N
+115	region	114	Central Uganda	2014	\N	country	UG	\N
+116	region	116	Northern Uganda	2014	\N	country	UG	\N
+117	region	117	Western Uganda	2014	\N	country	UG	\N
+118	sub_county	467	Busiro	2014	\N	district	27	\N
+119	sub_county	364	Buhaguzi	2014	\N	district	55	\N
+120	sub_county	310	Bulamogi	2014	\N	district	41	\N
+121	sub_county	456	Sheema	2014	\N	district	99	\N
+122	sub_county	421	Moroto municipality	2014	\N	district	93	\N
+123	sub_county	423	Obongi	2014	\N	district	47	\N
+124	sub_county	363	Bugahya	2014	\N	district	55	\N
+125	sub_county	393	Agago	2014	\N	district	10	\N
+126	sub_county	315	Bbaale	2014	\N	district	26	\N
+127	sub_county	413	Kassanda	2014	\N	district	22	\N
+128	sub_county	418	Buruli	2014	\N	district	23	\N
+129	sub_county	358	Kongasis	2014	\N	district	39	\N
+130	sub_county	380	Bunyangabo	2014	\N	district	57	\N
+131	sub_county	378	Fortportal municipality	2014	\N	district	57	\N
+132	sub_county	410	Mbale municipality	2014	\N	district	33	\N
+133	sub_county	392	East moyo	2014	\N	district	44	\N
+134	sub_county	327	Bubulo	2014	\N	district	42	\N
+135	sub_county	292	Bujenje	2014	\N	district	97	\N
+136	sub_county	320	Buyaga	2014	\N	district	59	\N
+137	sub_county	316	Ntenjeru	2014	\N	district	26	\N
+138	sub_county	295	Kibuku	2014	\N	district	75	\N
+139	sub_county	349	Bughendera	2014	\N	district	107	\N
+140	sub_county	308	Buvuma islands	2014	\N	district	74	\N
+141	sub_county	468	Kyadondo	2014	\N	district	27	\N
+142	sub_county	298	Koboko	2014	\N	district	53	\N
+143	sub_county	359	Butambala	2014	\N	district	67	\N
+144	sub_county	326	Buyanja	2014	\N	district	59	\N
+145	sub_county	311	Kampala capital city	2014	\N	district	20	\N
+146	sub_county	440	Ngora	2014	\N	district	84	\N
+147	sub_county	406	Terego	2014	\N	district	104	\N
+148	sub_county	331	Manjiya	2014	\N	district	37	\N
+149	sub_county	466	Tororo municipality	2014	\N	district	34	\N
+150	sub_county	309	Tingey	2014	\N	district	90	\N
+151	sub_county	471	Okoro	2014	\N	district	96	\N
+152	sub_county	307	Kinkizi	2014	\N	district	65	\N
+153	sub_county	314	Kasese municipality	2014	\N	district	58	\N
+154	sub_county	335	Mwenge	2014	\N	district	69	\N
+155	sub_county	400	Arua municipality	2014	\N	district	104	\N
+156	sub_county	444	Rushenyi	2014	\N	district	62	\N
+157	sub_county	470	Entebbe municipality	2014	\N	district	27	\N
+158	sub_county	328	Bunyole	2014	\N	district	40	\N
+159	sub_county	463	Soroti municipality	2014	\N	district	88	\N
+160	sub_county	291	Masaka municipality	2014	\N	district	18	\N
+161	sub_county	323	Kumi	2014	\N	district	86	\N
+162	sub_county	353	Bwamba	2014	\N	district	107	\N
+163	sub_county	401	Ayivu	2014	\N	district	104	\N
+164	sub_county	336	Lira municipality	2014	\N	district	6	\N
+165	sub_county	457	Budadiri	2014	\N	district	89	\N
+166	sub_county	352	Omoro	2014	\N	district	45	\N
+167	sub_county	319	Budaka	2014	\N	district	112	\N
+168	sub_county	442	Ntungamo municipality	2014	\N	district	62	\N
+169	sub_county	459	Rukungiri municipality	2014	\N	district	63	\N
+170	sub_county	337	Katikamu	2014	\N	district	21	\N
+171	sub_county	367	Bugweri	2014	\N	district	72	\N
+172	sub_county	362	Dokolo	2014	\N	district	51	\N
+173	sub_county	430	Chekwii	2014	\N	district	111	\N
+174	sub_county	409	Ruhinda	2014	\N	district	102	\N
+175	sub_county	432	Pian	2014	\N	district	111	\N
+176	sub_county	384	Kalaki	2014	\N	district	35	\N
+177	sub_county	426	Kasambya	2014	\N	district	22	\N
+178	sub_county	355	Busia municipality	2014	\N	district	83	\N
+179	sub_county	360	Budiope	2014	\N	district	78	\N
+180	sub_county	382	Bulambuli	2014	\N	district	92	\N
+181	sub_county	408	Kashari	2014	\N	district	61	\N
+182	sub_county	345	Luuka	2014	\N	district	71	\N
+183	sub_county	366	Ibanda	2014	\N	district	2	\N
+184	sub_county	330	Kazo	2014	\N	district	4	\N
+185	sub_county	428	Mukono municipality	2014	\N	district	79	\N
+186	sub_county	356	Bushenyi  municipality	2014	\N	district	103	\N
+187	sub_county	379	Kabale municipality	2014	\N	district	56	\N
+188	sub_county	312	Nyabushozi	2014	\N	district	4	\N
+189	sub_county	383	Kaberamaido	2014	\N	district	35	\N
+190	sub_county	324	Rubanda	2014	\N	district	56	\N
+191	sub_county	395	Kapelebyong	2014	\N	district	36	\N
+192	sub_county	294	Buzaaya	2014	\N	district	77	\N
+193	sub_county	458	Bujumbura	2014	\N	district	63	\N
+194	sub_county	346	Bamunanika	2014	\N	district	21	\N
+195	sub_county	443	Ruhaama	2014	\N	district	62	\N
+196	sub_county	297	Toroma	2014	\N	district	32	\N
+197	sub_county	427	Mukono	2014	\N	district	79	\N
+198	sub_county	376	Burahya	2014	\N	district	57	\N
+199	sub_county	435	Bokora	2014	\N	district	94	\N
+200	sub_county	451	Bunyaruguru	2014	\N	district	101	\N
+201	sub_county	372	Bukanga	2014	\N	district	3	\N
+202	sub_county	375	Kagoma	2014	\N	district	31	\N
+203	sub_county	306	Kitagwenda	2014	\N	district	64	\N
+204	sub_county	321	Bufumbira	2014	\N	district	60	\N
+205	sub_county	425	Buwekula	2014	\N	district	22	\N
+206	sub_county	344	Erute	2014	\N	district	6	\N
+207	sub_county	386	West budama (kisolo)	2014	\N	district	34	\N
+208	sub_county	416	Nakaseke	2014	\N	district	30	\N
+209	sub_county	436	Ntoroko	2014	\N	district	106	\N
+210	sub_county	447	Butebo	2014	\N	district	76	\N
+211	sub_county	389	Bukedea	2014	\N	district	38	\N
+212	sub_county	445	Nwoya	2014	\N	district	8	\N
+213	sub_county	403	Pokot	2014	\N	district	110	\N
+214	sub_county	339	Buikwe	2014	\N	district	80	\N
+215	sub_county	437	Kajara	2014	\N	district	62	\N
+216	sub_county	301	Usuk	2014	\N	district	32	\N
+217	sub_county	415	Rwampara	2014	\N	district	61	\N
+218	sub_county	374	Butembe	2014	\N	district	31	\N
+219	sub_county	370	Kigulu	2014	\N	district	72	\N
+220	sub_county	387	Bukooli	2014	\N	district	81	\N
+221	sub_county	414	Mbarara municipality	2014	\N	district	61	\N
+222	sub_county	318	Bugangaizi	2014	\N	district	59	\N
+223	sub_county	417	Busujju	2014	\N	district	29	\N
+224	sub_county	338	Kabula	2014	\N	district	28	\N
+225	sub_county	348	Maracha	2014	\N	district	105	\N
+226	sub_county	422	Bukooli	2014	\N	district	82	\N
+227	sub_county	388	Manyija	2014	\N	district	37	\N
+228	sub_county	385	Bujjumba	2014	\N	district	1	\N
+229	sub_county	433	Jonam	2014	\N	district	95	\N
+230	sub_county	357	Igara	2014	\N	district	103	\N
+231	sub_county	361	Gulu municipality	2014	\N	district	45	\N
+232	sub_county	397	Kilak	2014	\N	district	9	\N
+233	sub_county	390	Buliisa	2014	\N	district	66	\N
+234	sub_county	450	Kakuuto	2014	\N	district	24	\N
+235	sub_county	299	Bunya	2014	\N	district	73	\N
+236	sub_county	313	Bukonjo	2014	\N	district	58	\N
+237	sub_county	296	Busongora	2014	\N	district	58	\N
+238	sub_county	429	Nakifuma	2014	\N	district	79	\N
+239	sub_county	452	Rubabo	2014	\N	district	63	\N
+240	sub_county	431	Kadam	2014	\N	district	111	\N
+241	sub_county	332	Buhweju	2014	\N	district	100	\N
+242	sub_county	448	Kooki	2014	\N	district	24	\N
+243	sub_county	424	West moyo	2014	\N	district	47	\N
+244	sub_county	419	Busiki	2014	\N	district	43	\N
+245	sub_county	405	Kwania	2014	\N	district	12	\N
+246	sub_county	446	Aruu	2014	\N	district	11	\N
+247	sub_county	371	Rukiga	2014	\N	district	56	\N
+248	sub_county	343	Lamwo	2014	\N	district	15	\N
+249	sub_county	341	Kyaka	2014	\N	district	70	\N
+250	sub_county	329	Kiboga	2014	\N	district	109	\N
+251	sub_county	325	Kiboga	2014	\N	district	108	\N
+252	sub_county	396	Amuria	2014	\N	district	36	\N
+253	sub_county	434	Padyere	2014	\N	district	95	\N
+254	sub_county	455	Serere	2014	\N	district	87	\N
+255	sub_county	449	Kyotera	2014	\N	district	24	\N
+256	sub_county	342	Bukomansimbi	2014	\N	district	16	\N
+257	sub_county	322	Jinja municipality	2014	\N	district	31	\N
+258	sub_county	333	Chua	2014	\N	district	14	\N
+259	sub_county	462	Kasilo	2014	\N	district	87	\N
+260	sub_county	373	Ndorwa	2014	\N	district	56	\N
+261	sub_county	469	Aringa	2014	\N	district	48	\N
+262	sub_county	302	Bukoto	2014	\N	district	18	\N
+263	sub_county	354	Samia-bugwe	2014	\N	district	83	\N
+264	sub_county	391	Labwor	2014	\N	district	49	\N
+265	sub_county	340	Kween	2014	\N	district	91	\N
+266	sub_county	407	Vurra	2014	\N	district	104	\N
+267	sub_county	350	Gomba	2014	\N	district	19	\N
+268	sub_county	404	Bungokho	2014	\N	district	33	\N
+269	sub_county	369	Isingiro	2014	\N	district	3	\N
+270	sub_county	381	Kyamuswa	2014	\N	district	1	\N
+271	sub_county	402	Madi-okollo	2014	\N	district	104	\N
+272	sub_county	303	Masindi municipality	2014	\N	district	97	\N
+273	sub_county	439	Oyam	2014	\N	district	54	\N
+274	sub_county	394	Kioga	2014	\N	district	50	\N
+275	sub_county	465	Tororo	2014	\N	district	34	\N
+276	sub_county	461	Lwemiyaga	2014	\N	district	25	\N
+277	sub_county	377	Dodoth	2014	\N	district	52	\N
+278	sub_county	368	Iganga municipality	2014	\N	district	72	\N
+279	sub_county	365	Hoima municipality	2014	\N	district	55	\N
+280	sub_county	411	Mityana	2014	\N	district	29	\N
+281	sub_county	399	Maruzi	2014	\N	district	12	\N
+282	sub_county	317	Kibanda	2014	\N	district	98	\N
+283	sub_county	464	Soroti	2014	\N	district	88	\N
+284	sub_county	304	Kalungu	2014	\N	district	85	\N
+285	sub_county	351	Aswa	2014	\N	district	45	\N
+286	sub_county	420	Matheniko	2014	\N	district	93	\N
+287	sub_county	300	Kole	2014	\N	district	13	\N
+288	sub_county	290	Bugabula	2014	\N	district	77	\N
+289	sub_county	412	Mawokota	2014	\N	district	68	\N
+290	sub_county	398	Moroto	2014	\N	district	7	\N
+291	sub_county	334	Jie	2014	\N	district	46	\N
+292	sub_county	441	Pallisa	2014	\N	district	76	\N
+293	sub_county	293	Buruuli	2014	\N	district	97	\N
+294	sub_county	305	Kibale	2014	\N	district	64	\N
+295	sub_county	460	Mawogola	2014	\N	district	25	\N
+296	sub_county	347	Bukoto	2014	\N	district	17	\N
+297	sub_county	438	Otuke	2014	\N	district	5	\N
 \.
 
 
@@ -1048,7 +1052,7 @@ COPY wazimap_geography (id, geo_level, geo_code, name, year, square_kms, parent_
 -- Name: wazimap_geography_id_seq; Type: SEQUENCE SET; Schema: public; Owner: wazimap
 --
 
-SELECT pg_catalog.setval('wazimap_geography_id_seq', 122, true);
+SELECT pg_catalog.setval('wazimap_geography_id_seq', 297, true);
 
 
 --
@@ -1201,14 +1205,6 @@ ALTER TABLE ONLY django_site
 
 ALTER TABLE ONLY django_site
     ADD CONSTRAINT django_site_pkey PRIMARY KEY (id);
-
-
---
--- Name: population_data_2014_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
---
-
-ALTER TABLE ONLY population_data_2014
-    ADD CONSTRAINT population_data_2014_pkey PRIMARY KEY (id);
 
 
 --
@@ -1433,124 +1429,6 @@ REVOKE ALL ON SCHEMA public FROM PUBLIC;
 REVOKE ALL ON SCHEMA public FROM postgres;
 GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
-
-
---
--- Name: auth_group; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE auth_group FROM PUBLIC;
-REVOKE ALL ON TABLE auth_group FROM wazimap;
-GRANT ALL ON TABLE auth_group TO wazimap;
-
-
---
--- Name: auth_group_permissions; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE auth_group_permissions FROM PUBLIC;
-REVOKE ALL ON TABLE auth_group_permissions FROM wazimap;
-GRANT ALL ON TABLE auth_group_permissions TO wazimap;
-
-
---
--- Name: auth_permission; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE auth_permission FROM PUBLIC;
-REVOKE ALL ON TABLE auth_permission FROM wazimap;
-GRANT ALL ON TABLE auth_permission TO wazimap;
-
-
---
--- Name: auth_user; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE auth_user FROM PUBLIC;
-REVOKE ALL ON TABLE auth_user FROM wazimap;
-GRANT ALL ON TABLE auth_user TO wazimap;
-
-
---
--- Name: auth_user_groups; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE auth_user_groups FROM PUBLIC;
-REVOKE ALL ON TABLE auth_user_groups FROM wazimap;
-GRANT ALL ON TABLE auth_user_groups TO wazimap;
-
-
---
--- Name: auth_user_user_permissions; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE auth_user_user_permissions FROM PUBLIC;
-REVOKE ALL ON TABLE auth_user_user_permissions FROM wazimap;
-GRANT ALL ON TABLE auth_user_user_permissions TO wazimap;
-
-
---
--- Name: django_admin_log; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE django_admin_log FROM PUBLIC;
-REVOKE ALL ON TABLE django_admin_log FROM wazimap;
-GRANT ALL ON TABLE django_admin_log TO wazimap;
-
-
---
--- Name: django_content_type; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE django_content_type FROM PUBLIC;
-REVOKE ALL ON TABLE django_content_type FROM wazimap;
-GRANT ALL ON TABLE django_content_type TO wazimap;
-
-
---
--- Name: django_migrations; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE django_migrations FROM PUBLIC;
-REVOKE ALL ON TABLE django_migrations FROM wazimap;
-GRANT ALL ON TABLE django_migrations TO wazimap;
-
-
---
--- Name: django_session; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE django_session FROM PUBLIC;
-REVOKE ALL ON TABLE django_session FROM wazimap;
-GRANT ALL ON TABLE django_session TO wazimap;
-
-
---
--- Name: django_site; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE django_site FROM PUBLIC;
-REVOKE ALL ON TABLE django_site FROM wazimap;
-GRANT ALL ON TABLE django_site TO wazimap;
-
-
---
--- Name: population_data_2014; Type: ACL; Schema: public; Owner: postgres
---
-
-REVOKE ALL ON TABLE population_data_2014 FROM PUBLIC;
-REVOKE ALL ON TABLE population_data_2014 FROM postgres;
-GRANT ALL ON TABLE population_data_2014 TO postgres;
-GRANT ALL ON TABLE population_data_2014 TO wazimap;
-
-
---
--- Name: wazimap_geography; Type: ACL; Schema: public; Owner: wazimap
---
-
-REVOKE ALL ON TABLE wazimap_geography FROM PUBLIC;
-REVOKE ALL ON TABLE wazimap_geography FROM wazimap;
-GRANT ALL ON TABLE wazimap_geography TO wazimap;
 
 
 --
