@@ -26,10 +26,10 @@ WAZIMAP['levels'] = {
         },
     'district': {
         'plural': 'districts',
-        'children': ['sub_county'],
+        'children': ['subcounty'],
         },
-    'sub_county': {
-        'plural': 'sub_counties',
+    'subcounty': {
+        'plural': 'subcounties',
         'children': []
     }
 }
@@ -38,5 +38,5 @@ WAZIMAP['geometry_data'] = {
     'country': 'geo/country.topojson',
     'region': 'geo/region.topojson',
     'district': 'geo/district.topojson',
-    'sub_county': 'geo/sub_county.topojson',
+    'subcounty': 'geo/subcounty.topojson',
     }

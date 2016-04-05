@@ -398,6 +398,48 @@ ALTER SEQUENCE django_site_id_seq OWNED BY django_site.id;
 
 
 --
+-- Name: household; Type: TABLE; Schema: public; Owner: wazimap; Tablespace: 
+--
+
+CREATE TABLE household (
+    geo_level character varying(15) NOT NULL,
+    geo_code character varying(10) NOT NULL,
+    household character varying(128) NOT NULL,
+    total integer NOT NULL
+);
+
+
+ALTER TABLE household OWNER TO wazimap;
+
+--
+-- Name: ruralorurban; Type: TABLE; Schema: public; Owner: wazimap; Tablespace: 
+--
+
+CREATE TABLE ruralorurban (
+    geo_level character varying(15) NOT NULL,
+    geo_code character varying(10) NOT NULL,
+    "rural or urban" character varying(128) NOT NULL,
+    total integer NOT NULL
+);
+
+
+ALTER TABLE ruralorurban OWNER TO wazimap;
+
+--
+-- Name: sex; Type: TABLE; Schema: public; Owner: wazimap; Tablespace: 
+--
+
+CREATE TABLE sex (
+    geo_level character varying(15) NOT NULL,
+    geo_code character varying(10) NOT NULL,
+    sex character varying(128) NOT NULL,
+    total integer NOT NULL
+);
+
+
+ALTER TABLE sex OWNER TO wazimap;
+
+--
 -- Name: wazimap_geography; Type: TABLE; Schema: public; Owner: wazimap; Tablespace: 
 --
 
@@ -744,6 +786,702 @@ SELECT pg_catalog.setval('django_site_id_seq', 1, true);
 
 
 --
+-- Data for Name: household; Type: TABLE DATA; Schema: public; Owner: wazimap
+--
+
+COPY household (geo_level, geo_code, household, total) FROM stdin;
+district	80	household	410659
+district	80	non-household	12112
+district	16	household	150417
+district	16	non-household	996
+district	67	household	99528
+district	67	non-household	1312
+district	74	household	86231
+district	74	non-household	3659
+district	19	household	158665
+district	19	non-household	1257
+district	1	household	50178
+district	1	non-household	4115
+district	85	household	177936
+district	85	non-household	5296
+district	20	household	1469625
+district	20	non-household	37455
+district	26	household	363994
+district	26	non-household	4068
+district	109	household	143910
+district	109	non-household	4308
+district	108	household	212681
+district	108	non-household	2012
+district	21	household	447713
+district	21	non-household	9245
+district	17	household	272095
+district	17	non-household	2858
+district	28	household	92770
+district	28	non-household	983
+district	18	household	286374
+district	18	non-household	10630
+district	29	household	322982
+district	29	non-household	5982
+district	68	household	243767
+district	68	non-household	6781
+district	22	household	668307
+district	22	non-household	16030
+district	79	household	580016
+district	79	non-household	16788
+district	30	household	182923
+district	30	non-household	14446
+district	23	household	176951
+district	23	non-household	4848
+district	24	household	508526
+district	24	non-household	7783
+district	25	household	250523
+district	25	non-household	2074
+district	27	household	1959725
+district	27	non-household	37693
+district	396	household	269753
+district	396	non-household	1175
+district	319	household	206662
+district	319	non-household	935
+district	37	household	208752
+district	37	non-household	1421
+district	81	household	381783
+district	81	non-household	1130
+district	38	household	202757
+district	38	non-household	843
+district	39	household	88671
+district	39	non-household	685
+district	382	household	173560
+district	382	non-household	948
+district	83	household	320516
+district	83	non-household	3146
+district	40	household	243441
+district	40	non-household	712
+district	78	household	322145
+district	78	non-household	922
+district	72	household	500524
+district	72	non-household	3673
+district	31	household	460653
+district	31	non-household	10589
+district	383	household	213848
+district	383	non-household	1178
+district	41	household	234445
+district	41	non-household	1754
+district	77	household	481617
+district	77	non-household	4702
+district	90	household	104130
+district	90	non-household	1056
+district	32	household	164005
+district	32	non-household	2226
+district	75	household	201215
+district	75	non-household	818
+district	323	household	237788
+district	323	non-household	1480
+district	91	household	92869
+district	91	non-household	798
+district	345	household	237387
+district	345	non-household	633
+district	42	household	352818
+district	42	non-household	1007
+district	73	household	470775
+district	73	non-household	2464
+district	33	household	481562
+district	33	non-household	7398
+district	82	household	213253
+district	82	non-household	2189
+district	43	household	251833
+district	43	non-household	729
+district	84	household	140457
+district	84	non-household	1462
+district	76	household	384279
+district	76	non-household	2611
+district	87	household	283228
+district	87	non-household	2675
+district	89	household	241473
+district	89	non-household	949
+district	88	household	290928
+district	88	non-household	5905
+district	34	household	512474
+district	34	non-household	4608
+district	49	household	106996
+district	49	non-household	970
+district	44	household	223196
+district	44	non-household	2055
+district	10	household	226356
+district	10	non-household	1436
+district	7	household	227037
+district	7	non-household	504
+district	50	household	145209
+district	50	non-household	1957
+district	110	household	96601
+district	110	non-household	9166
+district	9	household	184976
+district	9	non-household	1720
+district	12	household	365632
+district	12	non-household	2994
+district	104	household	775080
+district	104	non-household	6997
+district	51	household	181885
+district	51	non-household	1208
+district	45	household	425094
+district	45	non-household	11251
+district	52	household	165859
+district	52	non-household	2020
+district	14	household	202625
+district	14	non-household	1423
+district	53	household	204969
+district	53	non-household	1526
+district	300	household	238059
+district	300	non-household	1268
+district	46	household	168907
+district	46	non-household	12143
+district	343	household	134077
+district	343	non-household	302
+district	6	household	400462
+district	6	non-household	7581
+district	348	household	185468
+district	348	non-household	666
+district	93	household	97431
+district	93	non-household	6001
+district	47	household	137594
+district	47	non-household	1418
+district	111	household	147439
+district	111	non-household	9251
+district	94	household	141216
+district	94	non-household	1008
+district	95	household	392764
+district	95	non-household	4030
+district	8	household	132026
+district	8	non-household	1480
+district	438	household	103806
+district	438	non-household	448
+district	54	household	381563
+district	54	non-household	2081
+district	11	household	176647
+district	11	non-household	1357
+district	48	household	478407
+district	48	non-household	6415
+district	96	household	238968
+district	96	non-household	1114
+district	100	household	120209
+district	100	non-household	511
+district	66	household	108038
+district	66	non-household	5123
+district	107	household	223055
+district	107	non-household	1332
+district	103	household	228974
+district	103	non-household	5466
+district	55	household	564468
+district	55	non-household	8518
+district	366	household	244692
+district	366	non-household	4933
+district	3	household	483362
+district	3	non-household	2998
+district	56	household	517476
+district	56	non-household	10755
+district	57	household	463744
+district	57	non-household	5492
+district	64	household	412021
+district	64	non-household	2433
+district	65	household	250224
+district	65	non-household	1920
+district	58	household	688770
+district	58	non-household	6222
+district	59	household	780403
+district	59	non-household	4685
+district	4	household	325325
+district	4	non-household	2752
+district	98	household	263597
+district	98	non-household	2600
+district	60	household	280304
+district	60	non-household	1401
+district	70	household	280703
+district	70	non-household	934
+district	69	household	421387
+district	69	non-household	817
+district	97	household	281753
+district	97	non-household	9360
+district	61	household	460748
+district	61	non-household	11881
+district	102	household	182867
+district	102	non-household	577
+district	436	household	66267
+district	436	non-household	738
+district	62	household	478726
+district	62	non-household	5115
+district	101	household	128062
+district	101	non-household	1087
+district	63	household	310454
+district	63	non-household	4240
+district	456	household	203278
+district	456	non-household	4065
+\.
+
+
+--
+-- Data for Name: ruralorurban; Type: TABLE DATA; Schema: public; Owner: wazimap
+--
+
+COPY ruralorurban (geo_level, geo_code, "rural or urban", total) FROM stdin;
+district	80	rural	214149
+district	80	urban	208622
+district	16	rural	138588
+district	16	urban	12825
+district	67	rural	85603
+district	67	urban	15237
+district	74	rural	79954
+district	74	urban	9936
+district	19	rural	147483
+district	19	urban	12439
+district	1	rural	49313
+district	1	urban	4980
+district	85	rural	151095
+district	85	urban	32137
+district	20	rural	0
+district	20	urban	1507080
+district	26	rural	340974
+district	26	urban	27088
+district	109	rural	114698
+district	109	urban	33520
+district	108	rural	190200
+district	108	urban	24493
+district	21	rural	361284
+district	21	urban	95674
+district	17	rural	232011
+district	17	urban	42942
+district	28	rural	79930
+district	28	urban	13823
+district	18	rural	193711
+district	18	urban	103293
+district	29	rural	221328
+district	29	urban	107636
+district	68	rural	207242
+district	68	urban	43306
+district	22	rural	572023
+district	22	urban	112314
+district	79	rural	434062
+district	79	urban	162742
+district	30	rural	157969
+district	30	urban	39400
+district	23	rural	157059
+district	23	urban	24740
+district	24	rural	482248
+district	24	urban	34061
+district	25	rural	235568
+district	25	urban	17029
+district	27	rural	814517
+district	27	urban	1182901
+district	396	rural	253543
+district	396	urban	17385
+district	319	rural	183720
+district	319	urban	23877
+district	37	rural	196400
+district	37	urban	13773
+district	81	rural	318681
+district	81	urban	64232
+district	38	rural	192691
+district	38	urban	10909
+district	39	rural	77262
+district	39	urban	12094
+district	382	rural	157643
+district	382	urban	16865
+district	83	rural	268844
+district	83	urban	54818
+district	40	rural	210952
+district	40	urban	33201
+district	78	rural	299836
+district	78	urban	23231
+district	72	rural	411460
+district	72	urban	92737
+district	31	rural	298858
+district	31	urban	172384
+district	383	rural	210994
+district	383	urban	4032
+district	41	rural	219438
+district	41	urban	16761
+district	77	rural	426958
+district	77	urban	59361
+district	90	rural	91762
+district	90	urban	13424
+district	32	rural	156943
+district	32	urban	9288
+district	75	rural	184597
+district	75	urban	17436
+district	323	rural	202774
+district	323	urban	36494
+district	91	rural	87210
+district	91	urban	6457
+district	345	rural	227749
+district	345	urban	10271
+district	42	rural	302541
+district	42	urban	51284
+district	73	rural	439692
+district	73	urban	33547
+district	33	rural	365869
+district	33	urban	123091
+district	82	rural	199717
+district	82	urban	15725
+district	43	rural	233943
+district	43	urban	18619
+district	84	rural	126748
+district	84	urban	15171
+district	76	rural	348951
+district	76	urban	37939
+district	87	rural	273701
+district	87	urban	12202
+district	89	rural	208173
+district	89	urban	34249
+district	88	rural	247187
+district	88	urban	49646
+district	34	rural	444937
+district	34	urban	72145
+district	49	rural	90790
+district	49	urban	17176
+district	44	rural	184864
+district	44	urban	40387
+district	10	rural	198799
+district	10	urban	28993
+district	7	rural	220835
+district	7	urban	6706
+district	50	rural	125562
+district	50	urban	21604
+district	110	rural	93982
+district	110	urban	11785
+district	9	rural	177395
+district	9	urban	9301
+district	12	rural	346032
+district	12	urban	22594
+district	104	rural	720131
+district	104	urban	61946
+district	51	rural	162974
+district	51	urban	20119
+district	45	rural	286545
+district	45	urban	149800
+district	52	rural	156319
+district	52	urban	11560
+district	14	rural	128455
+district	14	urban	75593
+district	53	rural	148585
+district	53	urban	57910
+district	300	rural	230479
+district	300	urban	8848
+district	46	rural	167198
+district	46	urban	13852
+district	343	rural	112637
+district	343	urban	21742
+district	6	rural	306770
+district	6	urban	101273
+district	348	rural	176834
+district	348	urban	9300
+district	93	rural	89219
+district	93	urban	14213
+district	47	rural	128432
+district	47	urban	10580
+district	111	rural	152961
+district	111	urban	3729
+district	94	rural	137499
+district	94	urban	4725
+district	95	rural	338665
+district	95	urban	58129
+district	8	rural	119913
+district	8	urban	13593
+district	438	rural	98041
+district	438	urban	6213
+district	54	rural	365209
+district	54	urban	18435
+district	11	rural	164602
+district	11	urban	13402
+district	48	rural	449819
+district	48	urban	35003
+district	96	rural	195497
+district	96	urban	44585
+district	100	rural	117768
+district	100	urban	2952
+district	66	rural	105923
+district	66	urban	7238
+district	107	rural	188726
+district	107	urban	35661
+district	103	rural	186655
+district	103	urban	47785
+district	55	rural	467021
+district	55	urban	105965
+district	366	rural	184860
+district	366	urban	64765
+district	3	rural	430982
+district	3	urban	55378
+district	56	rural	452093
+district	56	urban	76138
+district	57	rural	347082
+district	57	urban	122154
+district	64	rural	391546
+district	64	urban	22908
+district	65	rural	201006
+district	65	urban	51138
+district	58	rural	574011
+district	58	urban	120981
+district	59	rural	723308
+district	59	urban	61780
+district	4	rural	296822
+district	4	urban	31255
+district	98	rural	210594
+district	98	urban	55603
+district	60	rural	256251
+district	60	urban	25454
+district	70	rural	255337
+district	70	urban	26300
+district	69	rural	357391
+district	69	urban	64813
+district	97	rural	196675
+district	97	urban	94438
+district	61	rural	277471
+district	61	urban	195158
+district	102	rural	172048
+district	102	urban	11396
+district	436	rural	43216
+district	436	urban	23789
+district	62	rural	423211
+district	62	urban	60630
+district	101	rural	111912
+district	101	urban	17237
+district	63	rural	271088
+district	63	urban	43606
+district	456	rural	159963
+district	456	urban	47380
+\.
+
+
+--
+-- Data for Name: sex; Type: TABLE DATA; Schema: public; Owner: wazimap
+--
+
+COPY sex (geo_level, geo_code, sex, total) FROM stdin;
+district	80	male	212827
+district	80	female	209944
+district	16	male	75629
+district	16	female	75784
+district	67	male	50722
+district	67	female	50118
+district	74	male	48847
+district	74	female	41043
+district	19	male	82652
+district	19	female	77270
+district	1	male	31047
+district	1	female	23246
+district	85	male	92735
+district	85	female	90497
+district	20	male	724326
+district	20	female	782754
+district	26	male	181920
+district	26	female	186142
+district	109	male	77169
+district	109	female	71049
+district	108	male	112037
+district	108	female	102656
+district	21	male	230451
+district	21	female	226507
+district	17	male	134774
+district	17	female	140179
+district	28	male	46866
+district	28	female	46887
+district	18	male	149857
+district	18	female	147147
+district	29	male	168509
+district	29	female	160455
+district	68	male	128203
+district	68	female	122345
+district	22	male	351746
+district	22	female	332591
+district	79	male	297154
+district	79	female	299650
+district	30	male	107607
+district	30	female	89762
+district	23	male	94526
+district	23	female	87273
+district	24	male	257565
+district	24	female	258744
+district	25	male	127033
+district	25	female	125564
+district	27	male	962121
+district	27	female	1035297
+district	396	male	133017
+district	396	female	137911
+district	319	male	101076
+district	319	female	106521
+district	37	male	106519
+district	37	female	103654
+district	81	male	186400
+district	81	female	196513
+district	38	male	99122
+district	38	female	104478
+district	39	male	45258
+district	39	female	44098
+district	382	male	86505
+district	382	female	88003
+district	83	male	157415
+district	83	female	166247
+district	40	male	119721
+district	40	female	124432
+district	78	male	158794
+district	78	female	164273
+district	72	male	242543
+district	72	female	261654
+district	31	male	233166
+district	31	female	238076
+district	383	male	106555
+district	383	female	108471
+district	41	male	116787
+district	41	female	119412
+district	77	male	238729
+district	77	female	247590
+district	90	male	51782
+district	90	female	53404
+district	32	male	82558
+district	32	female	83673
+district	75	male	97845
+district	75	female	104188
+district	323	male	117007
+district	323	female	122261
+district	91	male	47594
+district	91	female	46073
+district	345	male	113849
+district	345	female	124171
+district	42	male	174088
+district	42	female	179737
+district	73	male	229791
+district	73	female	243448
+district	33	male	235624
+district	33	female	253336
+district	82	male	106608
+district	82	female	108834
+district	43	male	124304
+district	43	female	128258
+district	84	male	69153
+district	84	female	72766
+district	76	male	189342
+district	76	female	197548
+district	87	male	140832
+district	87	female	145071
+district	89	male	121119
+district	89	female	121303
+district	88	male	147128
+district	88	female	149705
+district	34	male	251892
+district	34	female	265190
+district	49	male	52769
+district	49	female	55197
+district	44	male	109092
+district	44	female	116159
+district	10	male	111081
+district	10	female	116711
+district	7	male	111191
+district	7	female	116350
+district	50	male	73741
+district	50	female	73425
+district	110	male	56403
+district	110	female	49364
+district	9	male	91468
+district	9	female	95228
+district	12	male	182017
+district	12	female	186609
+district	104	male	376953
+district	104	female	405124
+district	51	male	89943
+district	51	female	93150
+district	45	male	215906
+district	45	female	220439
+district	52	male	79379
+district	52	female	88500
+district	14	male	99604
+district	14	female	104444
+district	53	male	102529
+district	53	female	103966
+district	300	male	117798
+district	300	female	121529
+district	46	male	89163
+district	46	female	91887
+district	343	male	65196
+district	343	female	69183
+district	6	male	199245
+district	6	female	208798
+district	348	male	88228
+district	348	female	97906
+district	93	male	51452
+district	93	female	51980
+district	47	male	69392
+district	47	female	69620
+district	111	male	78030
+district	111	female	78660
+district	94	male	65991
+district	94	female	76233
+district	95	male	192974
+district	95	female	203820
+district	8	male	66227
+district	8	female	67279
+district	438	male	51315
+district	438	female	52939
+district	54	male	187886
+district	54	female	195758
+district	11	male	86838
+district	11	female	91166
+district	48	male	233159
+district	48	female	251663
+district	96	male	116198
+district	96	female	123884
+district	100	male	59245
+district	100	female	61475
+district	66	male	57822
+district	66	female	55339
+district	107	male	108766
+district	107	female	115621
+district	103	male	116410
+district	103	female	118030
+district	55	male	290413
+district	55	female	282573
+district	366	male	122796
+district	366	female	126829
+district	3	male	236619
+district	3	female	249741
+district	56	male	254414
+district	56	female	273817
+district	57	male	234816
+district	57	female	234420
+district	64	male	203164
+district	64	female	211290
+district	65	male	121873
+district	65	female	130271
+district	58	male	339455
+district	58	female	355537
+district	59	male	391185
+district	59	female	393903
+district	4	male	166935
+district	4	female	161142
+district	98	male	133701
+district	98	female	132496
+district	60	male	126643
+district	60	female	155062
+district	70	male	141043
+district	70	female	140594
+district	69	male	210900
+district	69	female	211304
+district	97	male	150522
+district	97	female	140591
+district	61	male	233492
+district	61	female	239137
+district	102	male	86771
+district	102	female	96673
+district	436	male	34174
+district	436	female	32831
+district	62	male	234822
+district	62	female	249019
+district	101	male	62135
+district	101	female	67014
+district	63	male	152070
+district	63	female	162624
+district	456	male	101032
+district	456	female	106311
+\.
+
+
+--
 -- Data for Name: wazimap_geography; Type: TABLE DATA; Schema: public; Owner: wazimap
 --
 
@@ -865,186 +1603,186 @@ COPY wazimap_geography (id, geo_level, geo_code, name, year, square_kms, parent_
 115	region	114	Central Uganda	2014	\N	country	UG	\N
 116	region	116	Northern Uganda	2014	\N	country	UG	\N
 117	region	117	Western Uganda	2014	\N	country	UG	\N
-118	sub_county	467	Busiro	2014	\N	district	27	\N
-119	sub_county	364	Buhaguzi	2014	\N	district	55	\N
-120	sub_county	310	Bulamogi	2014	\N	district	41	\N
-121	sub_county	456	Sheema	2014	\N	district	99	\N
-122	sub_county	421	Moroto municipality	2014	\N	district	93	\N
-123	sub_county	423	Obongi	2014	\N	district	47	\N
-124	sub_county	363	Bugahya	2014	\N	district	55	\N
-125	sub_county	393	Agago	2014	\N	district	10	\N
-126	sub_county	315	Bbaale	2014	\N	district	26	\N
-127	sub_county	413	Kassanda	2014	\N	district	22	\N
-128	sub_county	418	Buruli	2014	\N	district	23	\N
-129	sub_county	358	Kongasis	2014	\N	district	39	\N
-130	sub_county	380	Bunyangabo	2014	\N	district	57	\N
-131	sub_county	378	Fortportal municipality	2014	\N	district	57	\N
-132	sub_county	410	Mbale municipality	2014	\N	district	33	\N
-133	sub_county	392	East moyo	2014	\N	district	44	\N
-134	sub_county	327	Bubulo	2014	\N	district	42	\N
-135	sub_county	292	Bujenje	2014	\N	district	97	\N
-136	sub_county	320	Buyaga	2014	\N	district	59	\N
-137	sub_county	316	Ntenjeru	2014	\N	district	26	\N
-138	sub_county	295	Kibuku	2014	\N	district	75	\N
-139	sub_county	349	Bughendera	2014	\N	district	107	\N
-140	sub_county	308	Buvuma islands	2014	\N	district	74	\N
-141	sub_county	468	Kyadondo	2014	\N	district	27	\N
-142	sub_county	298	Koboko	2014	\N	district	53	\N
-143	sub_county	359	Butambala	2014	\N	district	67	\N
-144	sub_county	326	Buyanja	2014	\N	district	59	\N
-145	sub_county	311	Kampala capital city	2014	\N	district	20	\N
-146	sub_county	440	Ngora	2014	\N	district	84	\N
-147	sub_county	406	Terego	2014	\N	district	104	\N
-148	sub_county	331	Manjiya	2014	\N	district	37	\N
-149	sub_county	466	Tororo municipality	2014	\N	district	34	\N
-150	sub_county	309	Tingey	2014	\N	district	90	\N
-151	sub_county	471	Okoro	2014	\N	district	96	\N
-152	sub_county	307	Kinkizi	2014	\N	district	65	\N
-153	sub_county	314	Kasese municipality	2014	\N	district	58	\N
-154	sub_county	335	Mwenge	2014	\N	district	69	\N
-155	sub_county	400	Arua municipality	2014	\N	district	104	\N
-156	sub_county	444	Rushenyi	2014	\N	district	62	\N
-157	sub_county	470	Entebbe municipality	2014	\N	district	27	\N
-158	sub_county	328	Bunyole	2014	\N	district	40	\N
-159	sub_county	463	Soroti municipality	2014	\N	district	88	\N
-160	sub_county	291	Masaka municipality	2014	\N	district	18	\N
-161	sub_county	323	Kumi	2014	\N	district	86	\N
-162	sub_county	353	Bwamba	2014	\N	district	107	\N
-163	sub_county	401	Ayivu	2014	\N	district	104	\N
-164	sub_county	336	Lira municipality	2014	\N	district	6	\N
-165	sub_county	457	Budadiri	2014	\N	district	89	\N
-166	sub_county	352	Omoro	2014	\N	district	45	\N
-167	sub_county	319	Budaka	2014	\N	district	112	\N
-168	sub_county	442	Ntungamo municipality	2014	\N	district	62	\N
-169	sub_county	459	Rukungiri municipality	2014	\N	district	63	\N
-170	sub_county	337	Katikamu	2014	\N	district	21	\N
-171	sub_county	367	Bugweri	2014	\N	district	72	\N
-172	sub_county	362	Dokolo	2014	\N	district	51	\N
-173	sub_county	430	Chekwii	2014	\N	district	111	\N
-174	sub_county	409	Ruhinda	2014	\N	district	102	\N
-175	sub_county	432	Pian	2014	\N	district	111	\N
-176	sub_county	384	Kalaki	2014	\N	district	35	\N
-177	sub_county	426	Kasambya	2014	\N	district	22	\N
-178	sub_county	355	Busia municipality	2014	\N	district	83	\N
-179	sub_county	360	Budiope	2014	\N	district	78	\N
-180	sub_county	382	Bulambuli	2014	\N	district	92	\N
-181	sub_county	408	Kashari	2014	\N	district	61	\N
-182	sub_county	345	Luuka	2014	\N	district	71	\N
-183	sub_county	366	Ibanda	2014	\N	district	2	\N
-184	sub_county	330	Kazo	2014	\N	district	4	\N
-185	sub_county	428	Mukono municipality	2014	\N	district	79	\N
-186	sub_county	356	Bushenyi  municipality	2014	\N	district	103	\N
-187	sub_county	379	Kabale municipality	2014	\N	district	56	\N
-188	sub_county	312	Nyabushozi	2014	\N	district	4	\N
-189	sub_county	383	Kaberamaido	2014	\N	district	35	\N
-190	sub_county	324	Rubanda	2014	\N	district	56	\N
-191	sub_county	395	Kapelebyong	2014	\N	district	36	\N
-192	sub_county	294	Buzaaya	2014	\N	district	77	\N
-193	sub_county	458	Bujumbura	2014	\N	district	63	\N
-194	sub_county	346	Bamunanika	2014	\N	district	21	\N
-195	sub_county	443	Ruhaama	2014	\N	district	62	\N
-196	sub_county	297	Toroma	2014	\N	district	32	\N
-197	sub_county	427	Mukono	2014	\N	district	79	\N
-198	sub_county	376	Burahya	2014	\N	district	57	\N
-199	sub_county	435	Bokora	2014	\N	district	94	\N
-200	sub_county	451	Bunyaruguru	2014	\N	district	101	\N
-201	sub_county	372	Bukanga	2014	\N	district	3	\N
-202	sub_county	375	Kagoma	2014	\N	district	31	\N
-203	sub_county	306	Kitagwenda	2014	\N	district	64	\N
-204	sub_county	321	Bufumbira	2014	\N	district	60	\N
-205	sub_county	425	Buwekula	2014	\N	district	22	\N
-206	sub_county	344	Erute	2014	\N	district	6	\N
-207	sub_county	386	West budama (kisolo)	2014	\N	district	34	\N
-208	sub_county	416	Nakaseke	2014	\N	district	30	\N
-209	sub_county	436	Ntoroko	2014	\N	district	106	\N
-210	sub_county	447	Butebo	2014	\N	district	76	\N
-211	sub_county	389	Bukedea	2014	\N	district	38	\N
-212	sub_county	445	Nwoya	2014	\N	district	8	\N
-213	sub_county	403	Pokot	2014	\N	district	110	\N
-214	sub_county	339	Buikwe	2014	\N	district	80	\N
-215	sub_county	437	Kajara	2014	\N	district	62	\N
-216	sub_county	301	Usuk	2014	\N	district	32	\N
-217	sub_county	415	Rwampara	2014	\N	district	61	\N
-218	sub_county	374	Butembe	2014	\N	district	31	\N
-219	sub_county	370	Kigulu	2014	\N	district	72	\N
-220	sub_county	387	Bukooli	2014	\N	district	81	\N
-221	sub_county	414	Mbarara municipality	2014	\N	district	61	\N
-222	sub_county	318	Bugangaizi	2014	\N	district	59	\N
-223	sub_county	417	Busujju	2014	\N	district	29	\N
-224	sub_county	338	Kabula	2014	\N	district	28	\N
-225	sub_county	348	Maracha	2014	\N	district	105	\N
-226	sub_county	422	Bukooli	2014	\N	district	82	\N
-227	sub_county	388	Manyija	2014	\N	district	37	\N
-228	sub_county	385	Bujjumba	2014	\N	district	1	\N
-229	sub_county	433	Jonam	2014	\N	district	95	\N
-230	sub_county	357	Igara	2014	\N	district	103	\N
-231	sub_county	361	Gulu municipality	2014	\N	district	45	\N
-232	sub_county	397	Kilak	2014	\N	district	9	\N
-233	sub_county	390	Buliisa	2014	\N	district	66	\N
-234	sub_county	450	Kakuuto	2014	\N	district	24	\N
-235	sub_county	299	Bunya	2014	\N	district	73	\N
-236	sub_county	313	Bukonjo	2014	\N	district	58	\N
-237	sub_county	296	Busongora	2014	\N	district	58	\N
-238	sub_county	429	Nakifuma	2014	\N	district	79	\N
-239	sub_county	452	Rubabo	2014	\N	district	63	\N
-240	sub_county	431	Kadam	2014	\N	district	111	\N
-241	sub_county	332	Buhweju	2014	\N	district	100	\N
-242	sub_county	448	Kooki	2014	\N	district	24	\N
-243	sub_county	424	West moyo	2014	\N	district	47	\N
-244	sub_county	419	Busiki	2014	\N	district	43	\N
-245	sub_county	405	Kwania	2014	\N	district	12	\N
-246	sub_county	446	Aruu	2014	\N	district	11	\N
-247	sub_county	371	Rukiga	2014	\N	district	56	\N
-248	sub_county	343	Lamwo	2014	\N	district	15	\N
-249	sub_county	341	Kyaka	2014	\N	district	70	\N
-250	sub_county	329	Kiboga	2014	\N	district	109	\N
-251	sub_county	325	Kiboga	2014	\N	district	108	\N
-252	sub_county	396	Amuria	2014	\N	district	36	\N
-253	sub_county	434	Padyere	2014	\N	district	95	\N
-254	sub_county	455	Serere	2014	\N	district	87	\N
-255	sub_county	449	Kyotera	2014	\N	district	24	\N
-256	sub_county	342	Bukomansimbi	2014	\N	district	16	\N
-257	sub_county	322	Jinja municipality	2014	\N	district	31	\N
-258	sub_county	333	Chua	2014	\N	district	14	\N
-259	sub_county	462	Kasilo	2014	\N	district	87	\N
-260	sub_county	373	Ndorwa	2014	\N	district	56	\N
-261	sub_county	469	Aringa	2014	\N	district	48	\N
-262	sub_county	302	Bukoto	2014	\N	district	18	\N
-263	sub_county	354	Samia-bugwe	2014	\N	district	83	\N
-264	sub_county	391	Labwor	2014	\N	district	49	\N
-265	sub_county	340	Kween	2014	\N	district	91	\N
-266	sub_county	407	Vurra	2014	\N	district	104	\N
-267	sub_county	350	Gomba	2014	\N	district	19	\N
-268	sub_county	404	Bungokho	2014	\N	district	33	\N
-269	sub_county	369	Isingiro	2014	\N	district	3	\N
-270	sub_county	381	Kyamuswa	2014	\N	district	1	\N
-271	sub_county	402	Madi-okollo	2014	\N	district	104	\N
-272	sub_county	303	Masindi municipality	2014	\N	district	97	\N
-273	sub_county	439	Oyam	2014	\N	district	54	\N
-274	sub_county	394	Kioga	2014	\N	district	50	\N
-275	sub_county	465	Tororo	2014	\N	district	34	\N
-276	sub_county	461	Lwemiyaga	2014	\N	district	25	\N
-277	sub_county	377	Dodoth	2014	\N	district	52	\N
-278	sub_county	368	Iganga municipality	2014	\N	district	72	\N
-279	sub_county	365	Hoima municipality	2014	\N	district	55	\N
-280	sub_county	411	Mityana	2014	\N	district	29	\N
-281	sub_county	399	Maruzi	2014	\N	district	12	\N
-282	sub_county	317	Kibanda	2014	\N	district	98	\N
-283	sub_county	464	Soroti	2014	\N	district	88	\N
-284	sub_county	304	Kalungu	2014	\N	district	85	\N
-285	sub_county	351	Aswa	2014	\N	district	45	\N
-286	sub_county	420	Matheniko	2014	\N	district	93	\N
-287	sub_county	300	Kole	2014	\N	district	13	\N
-288	sub_county	290	Bugabula	2014	\N	district	77	\N
-289	sub_county	412	Mawokota	2014	\N	district	68	\N
-290	sub_county	398	Moroto	2014	\N	district	7	\N
-291	sub_county	334	Jie	2014	\N	district	46	\N
-292	sub_county	441	Pallisa	2014	\N	district	76	\N
-293	sub_county	293	Buruuli	2014	\N	district	97	\N
-294	sub_county	305	Kibale	2014	\N	district	64	\N
-295	sub_county	460	Mawogola	2014	\N	district	25	\N
-296	sub_county	347	Bukoto	2014	\N	district	17	\N
-297	sub_county	438	Otuke	2014	\N	district	5	\N
+118	subcounty	467	Busiro	2014	\N	district	27	\N
+119	subcounty	364	Buhaguzi	2014	\N	district	55	\N
+120	subcounty	310	Bulamogi	2014	\N	district	41	\N
+121	subcounty	456	Sheema	2014	\N	district	99	\N
+122	subcounty	421	Moroto municipality	2014	\N	district	93	\N
+123	subcounty	423	Obongi	2014	\N	district	47	\N
+124	subcounty	363	Bugahya	2014	\N	district	55	\N
+125	subcounty	393	Agago	2014	\N	district	10	\N
+126	subcounty	315	Bbaale	2014	\N	district	26	\N
+127	subcounty	413	Kassanda	2014	\N	district	22	\N
+128	subcounty	418	Buruli	2014	\N	district	23	\N
+129	subcounty	358	Kongasis	2014	\N	district	39	\N
+130	subcounty	380	Bunyangabo	2014	\N	district	57	\N
+131	subcounty	378	Fortportal municipality	2014	\N	district	57	\N
+132	subcounty	410	Mbale municipality	2014	\N	district	33	\N
+133	subcounty	392	East moyo	2014	\N	district	44	\N
+134	subcounty	327	Bubulo	2014	\N	district	42	\N
+135	subcounty	292	Bujenje	2014	\N	district	97	\N
+136	subcounty	320	Buyaga	2014	\N	district	59	\N
+137	subcounty	316	Ntenjeru	2014	\N	district	26	\N
+138	subcounty	295	Kibuku	2014	\N	district	75	\N
+139	subcounty	349	Bughendera	2014	\N	district	107	\N
+140	subcounty	308	Buvuma islands	2014	\N	district	74	\N
+141	subcounty	468	Kyadondo	2014	\N	district	27	\N
+142	subcounty	298	Koboko	2014	\N	district	53	\N
+143	subcounty	359	Butambala	2014	\N	district	67	\N
+144	subcounty	326	Buyanja	2014	\N	district	59	\N
+145	subcounty	311	Kampala capital city	2014	\N	district	20	\N
+146	subcounty	440	Ngora	2014	\N	district	84	\N
+147	subcounty	406	Terego	2014	\N	district	104	\N
+148	subcounty	331	Manjiya	2014	\N	district	37	\N
+149	subcounty	466	Tororo municipality	2014	\N	district	34	\N
+150	subcounty	309	Tingey	2014	\N	district	90	\N
+151	subcounty	471	Okoro	2014	\N	district	96	\N
+152	subcounty	307	Kinkizi	2014	\N	district	65	\N
+153	subcounty	314	Kasese municipality	2014	\N	district	58	\N
+154	subcounty	335	Mwenge	2014	\N	district	69	\N
+155	subcounty	400	Arua municipality	2014	\N	district	104	\N
+156	subcounty	444	Rushenyi	2014	\N	district	62	\N
+157	subcounty	470	Entebbe municipality	2014	\N	district	27	\N
+158	subcounty	328	Bunyole	2014	\N	district	40	\N
+159	subcounty	463	Soroti municipality	2014	\N	district	88	\N
+160	subcounty	291	Masaka municipality	2014	\N	district	18	\N
+161	subcounty	323	Kumi	2014	\N	district	86	\N
+162	subcounty	353	Bwamba	2014	\N	district	107	\N
+163	subcounty	401	Ayivu	2014	\N	district	104	\N
+164	subcounty	336	Lira municipality	2014	\N	district	6	\N
+165	subcounty	457	Budadiri	2014	\N	district	89	\N
+166	subcounty	352	Omoro	2014	\N	district	45	\N
+167	subcounty	319	Budaka	2014	\N	district	112	\N
+168	subcounty	442	Ntungamo municipality	2014	\N	district	62	\N
+169	subcounty	459	Rukungiri municipality	2014	\N	district	63	\N
+170	subcounty	337	Katikamu	2014	\N	district	21	\N
+171	subcounty	367	Bugweri	2014	\N	district	72	\N
+172	subcounty	362	Dokolo	2014	\N	district	51	\N
+173	subcounty	430	Chekwii	2014	\N	district	111	\N
+174	subcounty	409	Ruhinda	2014	\N	district	102	\N
+175	subcounty	432	Pian	2014	\N	district	111	\N
+176	subcounty	384	Kalaki	2014	\N	district	35	\N
+177	subcounty	426	Kasambya	2014	\N	district	22	\N
+178	subcounty	355	Busia municipality	2014	\N	district	83	\N
+179	subcounty	360	Budiope	2014	\N	district	78	\N
+180	subcounty	382	Bulambuli	2014	\N	district	92	\N
+181	subcounty	408	Kashari	2014	\N	district	61	\N
+182	subcounty	345	Luuka	2014	\N	district	71	\N
+183	subcounty	366	Ibanda	2014	\N	district	2	\N
+184	subcounty	330	Kazo	2014	\N	district	4	\N
+185	subcounty	428	Mukono municipality	2014	\N	district	79	\N
+186	subcounty	356	Bushenyi  municipality	2014	\N	district	103	\N
+187	subcounty	379	Kabale municipality	2014	\N	district	56	\N
+188	subcounty	312	Nyabushozi	2014	\N	district	4	\N
+189	subcounty	383	Kaberamaido	2014	\N	district	35	\N
+190	subcounty	324	Rubanda	2014	\N	district	56	\N
+191	subcounty	395	Kapelebyong	2014	\N	district	36	\N
+192	subcounty	294	Buzaaya	2014	\N	district	77	\N
+193	subcounty	458	Bujumbura	2014	\N	district	63	\N
+194	subcounty	346	Bamunanika	2014	\N	district	21	\N
+195	subcounty	443	Ruhaama	2014	\N	district	62	\N
+196	subcounty	297	Toroma	2014	\N	district	32	\N
+197	subcounty	427	Mukono	2014	\N	district	79	\N
+198	subcounty	376	Burahya	2014	\N	district	57	\N
+199	subcounty	435	Bokora	2014	\N	district	94	\N
+200	subcounty	451	Bunyaruguru	2014	\N	district	101	\N
+201	subcounty	372	Bukanga	2014	\N	district	3	\N
+202	subcounty	375	Kagoma	2014	\N	district	31	\N
+203	subcounty	306	Kitagwenda	2014	\N	district	64	\N
+204	subcounty	321	Bufumbira	2014	\N	district	60	\N
+205	subcounty	425	Buwekula	2014	\N	district	22	\N
+206	subcounty	344	Erute	2014	\N	district	6	\N
+207	subcounty	386	West budama (kisolo)	2014	\N	district	34	\N
+208	subcounty	416	Nakaseke	2014	\N	district	30	\N
+209	subcounty	436	Ntoroko	2014	\N	district	106	\N
+210	subcounty	447	Butebo	2014	\N	district	76	\N
+211	subcounty	389	Bukedea	2014	\N	district	38	\N
+212	subcounty	445	Nwoya	2014	\N	district	8	\N
+213	subcounty	403	Pokot	2014	\N	district	110	\N
+214	subcounty	339	Buikwe	2014	\N	district	80	\N
+215	subcounty	437	Kajara	2014	\N	district	62	\N
+216	subcounty	301	Usuk	2014	\N	district	32	\N
+217	subcounty	415	Rwampara	2014	\N	district	61	\N
+218	subcounty	374	Butembe	2014	\N	district	31	\N
+219	subcounty	370	Kigulu	2014	\N	district	72	\N
+220	subcounty	387	Bukooli	2014	\N	district	81	\N
+221	subcounty	414	Mbarara municipality	2014	\N	district	61	\N
+222	subcounty	318	Bugangaizi	2014	\N	district	59	\N
+223	subcounty	417	Busujju	2014	\N	district	29	\N
+224	subcounty	338	Kabula	2014	\N	district	28	\N
+225	subcounty	348	Maracha	2014	\N	district	105	\N
+226	subcounty	422	Bukooli	2014	\N	district	82	\N
+227	subcounty	388	Manyija	2014	\N	district	37	\N
+228	subcounty	385	Bujjumba	2014	\N	district	1	\N
+229	subcounty	433	Jonam	2014	\N	district	95	\N
+230	subcounty	357	Igara	2014	\N	district	103	\N
+231	subcounty	361	Gulu municipality	2014	\N	district	45	\N
+232	subcounty	397	Kilak	2014	\N	district	9	\N
+233	subcounty	390	Buliisa	2014	\N	district	66	\N
+234	subcounty	450	Kakuuto	2014	\N	district	24	\N
+235	subcounty	299	Bunya	2014	\N	district	73	\N
+236	subcounty	313	Bukonjo	2014	\N	district	58	\N
+237	subcounty	296	Busongora	2014	\N	district	58	\N
+238	subcounty	429	Nakifuma	2014	\N	district	79	\N
+239	subcounty	452	Rubabo	2014	\N	district	63	\N
+240	subcounty	431	Kadam	2014	\N	district	111	\N
+241	subcounty	332	Buhweju	2014	\N	district	100	\N
+242	subcounty	448	Kooki	2014	\N	district	24	\N
+243	subcounty	424	West moyo	2014	\N	district	47	\N
+244	subcounty	419	Busiki	2014	\N	district	43	\N
+245	subcounty	405	Kwania	2014	\N	district	12	\N
+246	subcounty	446	Aruu	2014	\N	district	11	\N
+247	subcounty	371	Rukiga	2014	\N	district	56	\N
+248	subcounty	343	Lamwo	2014	\N	district	15	\N
+249	subcounty	341	Kyaka	2014	\N	district	70	\N
+250	subcounty	329	Kiboga	2014	\N	district	109	\N
+251	subcounty	325	Kiboga	2014	\N	district	108	\N
+252	subcounty	396	Amuria	2014	\N	district	36	\N
+253	subcounty	434	Padyere	2014	\N	district	95	\N
+254	subcounty	455	Serere	2014	\N	district	87	\N
+255	subcounty	449	Kyotera	2014	\N	district	24	\N
+256	subcounty	342	Bukomansimbi	2014	\N	district	16	\N
+257	subcounty	322	Jinja municipality	2014	\N	district	31	\N
+258	subcounty	333	Chua	2014	\N	district	14	\N
+259	subcounty	462	Kasilo	2014	\N	district	87	\N
+260	subcounty	373	Ndorwa	2014	\N	district	56	\N
+261	subcounty	469	Aringa	2014	\N	district	48	\N
+262	subcounty	302	Bukoto	2014	\N	district	18	\N
+263	subcounty	354	Samia-bugwe	2014	\N	district	83	\N
+264	subcounty	391	Labwor	2014	\N	district	49	\N
+265	subcounty	340	Kween	2014	\N	district	91	\N
+266	subcounty	407	Vurra	2014	\N	district	104	\N
+267	subcounty	350	Gomba	2014	\N	district	19	\N
+268	subcounty	404	Bungokho	2014	\N	district	33	\N
+269	subcounty	369	Isingiro	2014	\N	district	3	\N
+270	subcounty	381	Kyamuswa	2014	\N	district	1	\N
+271	subcounty	402	Madi-okollo	2014	\N	district	104	\N
+272	subcounty	303	Masindi municipality	2014	\N	district	97	\N
+273	subcounty	439	Oyam	2014	\N	district	54	\N
+274	subcounty	394	Kioga	2014	\N	district	50	\N
+275	subcounty	465	Tororo	2014	\N	district	34	\N
+276	subcounty	461	Lwemiyaga	2014	\N	district	25	\N
+277	subcounty	377	Dodoth	2014	\N	district	52	\N
+278	subcounty	368	Iganga municipality	2014	\N	district	72	\N
+279	subcounty	365	Hoima municipality	2014	\N	district	55	\N
+280	subcounty	411	Mityana	2014	\N	district	29	\N
+281	subcounty	399	Maruzi	2014	\N	district	12	\N
+282	subcounty	317	Kibanda	2014	\N	district	98	\N
+283	subcounty	464	Soroti	2014	\N	district	88	\N
+284	subcounty	304	Kalungu	2014	\N	district	85	\N
+285	subcounty	351	Aswa	2014	\N	district	45	\N
+286	subcounty	420	Matheniko	2014	\N	district	93	\N
+287	subcounty	300	Kole	2014	\N	district	13	\N
+288	subcounty	290	Bugabula	2014	\N	district	77	\N
+289	subcounty	412	Mawokota	2014	\N	district	68	\N
+290	subcounty	398	Moroto	2014	\N	district	7	\N
+291	subcounty	334	Jie	2014	\N	district	46	\N
+292	subcounty	441	Pallisa	2014	\N	district	76	\N
+293	subcounty	293	Buruuli	2014	\N	district	97	\N
+294	subcounty	305	Kibale	2014	\N	district	64	\N
+295	subcounty	460	Mawogola	2014	\N	district	25	\N
+296	subcounty	347	Bukoto	2014	\N	district	17	\N
+297	subcounty	438	Otuke	2014	\N	district	5	\N
 \.
 
 
@@ -1205,6 +1943,30 @@ ALTER TABLE ONLY django_site
 
 ALTER TABLE ONLY django_site
     ADD CONSTRAINT django_site_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: household_pkey; Type: CONSTRAINT; Schema: public; Owner: wazimap; Tablespace: 
+--
+
+ALTER TABLE ONLY household
+    ADD CONSTRAINT household_pkey PRIMARY KEY (geo_level, geo_code, household);
+
+
+--
+-- Name: ruralorurban_pkey; Type: CONSTRAINT; Schema: public; Owner: wazimap; Tablespace: 
+--
+
+ALTER TABLE ONLY ruralorurban
+    ADD CONSTRAINT ruralorurban_pkey PRIMARY KEY (geo_level, geo_code, "rural or urban");
+
+
+--
+-- Name: sex_pkey; Type: CONSTRAINT; Schema: public; Owner: wazimap; Tablespace: 
+--
+
+ALTER TABLE ONLY sex
+    ADD CONSTRAINT sex_pkey PRIMARY KEY (geo_level, geo_code, sex);
 
 
 --
