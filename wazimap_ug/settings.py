@@ -1,7 +1,9 @@
 # pull in the default wazimap settings
 from wazimap.settings import *  # noqa
 
-DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://wazimap:postgres@localhost/wazimap')
+# DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://wazimap:postgres@localhost/wazimap')
+DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://postgres:@localhost/wazimap')
+
 DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL),
 }
@@ -12,7 +14,7 @@ INSTALLED_APPS = ['wazimap_ug'] + INSTALLED_APPS
 
 # Localise this instance of Wazimap
 WAZIMAP['name'] = 'Wazimap Uganda'
-WAZIMAP['url'] = 'http://openug.com'
+WAZIMAP['url'] = 'http://openug.ballotuganda.org'
 WAZIMAP['country_code'] = 'UG'
 WAZIMAP['profile_builder'] = 'wazimap_ug.profiles.get_profile'
 WAZIMAP['levels'] = {
@@ -40,3 +42,5 @@ WAZIMAP['geometry_data'] = {
     'district': 'geo/district.topojson',
     'subcounty': 'geo/subcounty.topojson',
     }
+
+WAZIMAP['twitter'] = '@Code4Africa'
