@@ -1,14 +1,18 @@
 from wazimap.data.tables import get_datatable
-from wazimap.data.utils import merge_dicts, get_session, get_stat_data
+from wazimap.data.utils import merge_dicts, get_session, get_stat_data, LocationNotFound
 from wazimap.geo import geo_data
 
 __author__ = 'kenneth'
 
 
 def get_demographics_profile(geo_code, geo_level, session):
-    sex_dist_data, total_pop = get_stat_data('sex', geo_level, geo_code, session, table_fields=['sex'])
+    try:
+        sex_dist_data, total_pop = get_stat_data('sex', geo_level, geo_code, session, table_fields=['sex'])
+        urban_dist_data, _ = get_stat_data('rural or urban', geo_level, geo_code, session, table_fields=['rural or urban'])
+    except LocationNotFound:
+        sex_dist_data, total_pop = {}, 1
+        urban_dist_data = {'Urban': {}, 'Rural': {}}
 
-    urban_dist_data, _ = get_stat_data('rural or urban', geo_level, geo_code, session, table_fields=['rural or urban'])
     total_urbanised = 0
     for data, value in urban_dist_data['Urban'].iteritems():
         if data == 'numerators':
