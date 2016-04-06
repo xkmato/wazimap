@@ -412,6 +412,34 @@ CREATE TABLE household (
 ALTER TABLE household OWNER TO wazimap;
 
 --
+-- Name: householddistributionbyenergysource; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE householddistributionbyenergysource (
+    geo_level character varying(15) NOT NULL,
+    geo_code character varying(10) NOT NULL,
+    "household distribution by energy source" character varying(128) NOT NULL,
+    total integer NOT NULL
+);
+
+
+ALTER TABLE householddistributionbyenergysource OWNER TO postgres;
+
+--
+-- Name: householddistributionbylightsource; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE householddistributionbylightsource (
+    geo_level character varying(15) NOT NULL,
+    geo_code character varying(10) NOT NULL,
+    "household distribution by light source" character varying(128) NOT NULL,
+    total integer NOT NULL
+);
+
+
+ALTER TABLE householddistributionbylightsource OWNER TO postgres;
+
+--
 -- Name: ruralorurban; Type: TABLE; Schema: public; Owner: wazimap; Tablespace: 
 --
 
@@ -1014,6 +1042,1478 @@ district	63	household	310454
 district	63	non-household	4240
 district	456	household	203278
 district	456	non-household	4065
+\.
+
+
+--
+-- Data for Name: householddistributionbyenergysource; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY householddistributionbyenergysource (geo_level, geo_code, "household distribution by energy source", total) FROM stdin;
+district	80	electricity	2481
+district	80	gas	444
+district	80	paraffin stove	881
+district	80	charcoal	36107
+district	80	firewood	56409
+district	80	others	1046
+district	16	electricity	521
+district	16	gas	73
+district	16	paraffin stove	334
+district	16	charcoal	3118
+district	16	firewood	29691
+district	16	others	376
+district	67	electricity	431
+district	67	gas	53
+district	67	paraffin stove	308
+district	67	charcoal	4444
+district	67	firewood	16184
+district	67	others	160
+district	74	electricity	133
+district	74	gas	51
+district	74	paraffin stove	184
+district	74	charcoal	10267
+district	74	firewood	13561
+district	74	others	739
+district	19	electricity	619
+district	19	gas	101
+district	19	paraffin stove	269
+district	19	charcoal	4142
+district	19	firewood	29788
+district	19	others	296
+district	1	electricity	182
+district	1	gas	45
+district	1	paraffin stove	509
+district	1	charcoal	11655
+district	1	firewood	7225
+district	1	others	484
+district	85	electricity	742
+district	85	gas	129
+district	85	paraffin stove	635
+district	85	charcoal	6868
+district	85	firewood	32432
+district	85	others	444
+district	20	electricity	33792
+district	20	gas	22802
+district	20	paraffin stove	17947
+district	20	charcoal	321686
+district	20	firewood	10612
+district	20	others	7726
+district	26	electricity	891
+district	26	gas	172
+district	26	paraffin stove	509
+district	26	charcoal	14594
+district	26	firewood	59197
+district	26	others	449
+district	109	electricity	408
+district	109	gas	86
+district	109	paraffin stove	303
+district	109	charcoal	8086
+district	109	firewood	24765
+district	109	others	377
+district	108	electricity	448
+district	108	gas	133
+district	108	paraffin stove	263
+district	108	charcoal	7075
+district	108	firewood	39407
+district	108	others	385
+district	21	electricity	3105
+district	21	gas	455
+district	21	paraffin stove	1074
+district	21	charcoal	31732
+district	21	firewood	67861
+district	21	others	784
+district	17	electricity	1028
+district	17	gas	177
+district	17	paraffin stove	592
+district	17	charcoal	10322
+district	17	firewood	49014
+district	17	others	446
+district	28	electricity	284
+district	28	gas	120
+district	28	paraffin stove	337
+district	28	charcoal	4941
+district	28	firewood	14641
+district	28	others	160
+district	18	electricity	2927
+district	18	gas	536
+district	18	paraffin stove	2160
+district	18	charcoal	27166
+district	18	firewood	41617
+district	18	others	945
+district	29	electricity	1427
+district	29	gas	383
+district	29	paraffin stove	757
+district	29	charcoal	19125
+district	29	firewood	57360
+district	29	others	744
+district	68	electricity	1008
+district	68	gas	269
+district	68	paraffin stove	635
+district	68	charcoal	14621
+district	68	firewood	42417
+district	68	others	646
+district	22	electricity	2681
+district	22	gas	619
+district	22	paraffin stove	976
+district	22	charcoal	25155
+district	22	firewood	120675
+district	22	others	841
+district	79	electricity	3349
+district	79	gas	1464
+district	79	paraffin stove	1940
+district	79	charcoal	59563
+district	79	firewood	76018
+district	79	others	1383
+district	30	electricity	807
+district	30	gas	170
+district	30	paraffin stove	401
+district	30	charcoal	9428
+district	30	firewood	31922
+district	30	others	328
+district	23	electricity	937
+district	23	gas	144
+district	23	paraffin stove	318
+district	23	charcoal	7695
+district	23	firewood	26558
+district	23	others	394
+district	24	electricity	1713
+district	24	gas	431
+district	24	paraffin stove	1302
+district	24	charcoal	15751
+district	24	firewood	95817
+district	24	others	916
+district	25	electricity	847
+district	25	gas	189
+district	25	paraffin stove	486
+district	25	charcoal	6798
+district	25	firewood	45046
+district	25	others	319
+district	27	electricity	22292
+district	27	gas	10706
+district	27	paraffin stove	13714
+district	27	charcoal	342921
+district	27	firewood	99136
+district	27	others	4723
+district	396	electricity	323
+district	396	gas	185
+district	396	paraffin stove	124
+district	396	charcoal	2584
+district	396	firewood	44826
+district	396	others	228
+district	319	electricity	326
+district	319	gas	61
+district	319	paraffin stove	117
+district	319	charcoal	2205
+district	319	firewood	34145
+district	319	others	201
+district	37	electricity	486
+district	37	gas	150
+district	37	paraffin stove	234
+district	37	charcoal	1387
+district	37	firewood	34295
+district	37	others	112
+district	81	electricity	720
+district	81	gas	263
+district	81	paraffin stove	293
+district	81	charcoal	10383
+district	81	firewood	61870
+district	81	others	277
+district	38	electricity	242
+district	38	gas	78
+district	38	paraffin stove	149
+district	38	charcoal	2150
+district	38	firewood	33346
+district	38	others	165
+district	39	electricity	172
+district	39	gas	94
+district	39	paraffin stove	116
+district	39	charcoal	736
+district	39	firewood	15491
+district	39	others	29
+district	382	electricity	277
+district	382	gas	113
+district	382	paraffin stove	180
+district	382	charcoal	2066
+district	382	firewood	31074
+district	382	others	201
+district	83	electricity	579
+district	83	gas	267
+district	83	paraffin stove	461
+district	83	charcoal	15734
+district	83	firewood	47289
+district	83	others	354
+district	40	electricity	355
+district	40	gas	130
+district	40	paraffin stove	136
+district	40	charcoal	2982
+district	40	firewood	40348
+district	40	others	379
+district	78	electricity	668
+district	78	gas	174
+district	78	paraffin stove	239
+district	78	charcoal	4082
+district	78	firewood	55193
+district	78	others	269
+district	72	electricity	1322
+district	72	gas	376
+district	72	paraffin stove	587
+district	72	charcoal	29707
+district	72	firewood	69284
+district	72	others	757
+district	31	electricity	3965
+district	31	gas	1176
+district	31	paraffin stove	877
+district	31	charcoal	48848
+district	31	firewood	49229
+district	31	others	816
+district	383	electricity	283
+district	383	gas	121
+district	383	paraffin stove	123
+district	383	charcoal	2080
+district	383	firewood	35891
+district	383	others	147
+district	41	electricity	568
+district	41	gas	97
+district	41	paraffin stove	158
+district	41	charcoal	3870
+district	41	firewood	37681
+district	41	others	160
+district	77	electricity	1138
+district	77	gas	329
+district	77	paraffin stove	376
+district	77	charcoal	12914
+district	77	firewood	77791
+district	77	others	445
+district	90	electricity	287
+district	90	gas	117
+district	90	paraffin stove	180
+district	90	charcoal	2456
+district	90	firewood	19071
+district	90	others	71
+district	32	electricity	310
+district	32	gas	118
+district	32	paraffin stove	118
+district	32	charcoal	2019
+district	32	firewood	27750
+district	32	others	94
+district	75	electricity	277
+district	75	gas	60
+district	75	paraffin stove	120
+district	75	charcoal	1788
+district	75	firewood	32869
+district	75	others	117
+district	323	electricity	460
+district	323	gas	218
+district	323	paraffin stove	213
+district	323	charcoal	3668
+district	323	firewood	35767
+district	323	others	192
+district	91	electricity	152
+district	91	gas	61
+district	91	paraffin stove	90
+district	91	charcoal	585
+district	91	firewood	16393
+district	91	others	47
+district	345	electricity	552
+district	345	gas	119
+district	345	paraffin stove	163
+district	345	charcoal	4294
+district	345	firewood	38733
+district	345	others	197
+district	42	electricity	670
+district	42	gas	241
+district	42	paraffin stove	571
+district	42	charcoal	3582
+district	42	firewood	66740
+district	42	others	588
+district	73	electricity	1358
+district	73	gas	358
+district	73	paraffin stove	471
+district	73	charcoal	16609
+district	73	firewood	73675
+district	73	others	737
+district	33	electricity	2771
+district	33	gas	1348
+district	33	paraffin stove	1342
+district	33	charcoal	35249
+district	33	firewood	63931
+district	33	others	823
+district	82	electricity	229
+district	82	gas	154
+district	82	paraffin stove	235
+district	82	charcoal	6500
+district	82	firewood	34837
+district	82	others	509
+district	43	electricity	447
+district	43	gas	95
+district	43	paraffin stove	137
+district	43	charcoal	3845
+district	43	firewood	40327
+district	43	others	188
+district	84	electricity	226
+district	84	gas	118
+district	84	paraffin stove	100
+district	84	charcoal	1420
+district	84	firewood	21246
+district	84	others	98
+district	76	electricity	617
+district	76	gas	205
+district	76	paraffin stove	288
+district	76	charcoal	3528
+district	76	firewood	60270
+district	76	others	202
+district	87	electricity	492
+district	87	gas	170
+district	87	paraffin stove	210
+district	87	charcoal	2634
+district	87	firewood	43079
+district	87	others	238
+district	89	electricity	698
+district	89	gas	512
+district	89	paraffin stove	553
+district	89	charcoal	3944
+district	89	firewood	47516
+district	89	others	239
+district	88	electricity	883
+district	88	gas	293
+district	88	paraffin stove	382
+district	88	charcoal	13023
+district	88	firewood	39591
+district	88	others	475
+district	34	electricity	1518
+district	34	gas	725
+district	34	paraffin stove	868
+district	34	charcoal	11816
+district	34	firewood	83963
+district	34	others	426
+district	49	electricity	112
+district	49	gas	53
+district	49	paraffin stove	63
+district	49	charcoal	1963
+district	49	firewood	15706
+district	49	others	118
+district	44	electricity	348
+district	44	gas	165
+district	44	paraffin stove	211
+district	44	charcoal	8284
+district	44	firewood	31238
+district	44	others	465
+district	10	electricity	331
+district	10	gas	131
+district	10	paraffin stove	329
+district	10	charcoal	3153
+district	10	firewood	38840
+district	10	others	160
+district	7	electricity	378
+district	7	gas	110
+district	7	paraffin stove	222
+district	7	charcoal	1346
+district	7	firewood	43828
+district	7	others	121
+district	50	electricity	261
+district	50	gas	99
+district	50	paraffin stove	112
+district	50	charcoal	2706
+district	50	firewood	24318
+district	50	others	223
+district	110	electricity	71
+district	110	gas	42
+district	110	paraffin stove	73
+district	110	charcoal	853
+district	110	firewood	14252
+district	110	others	137
+district	9	electricity	475
+district	9	gas	188
+district	9	paraffin stove	284
+district	9	charcoal	3382
+district	9	firewood	31585
+district	9	others	160
+district	12	electricity	588
+district	12	gas	241
+district	12	paraffin stove	319
+district	12	charcoal	4021
+district	12	firewood	65437
+district	12	others	578
+district	104	electricity	1425
+district	104	gas	493
+district	104	paraffin stove	1152
+district	104	charcoal	24567
+district	104	firewood	118155
+district	104	others	663
+district	51	electricity	210
+district	51	gas	87
+district	51	paraffin stove	178
+district	51	charcoal	1474
+district	51	firewood	32541
+district	51	others	110
+district	45	electricity	966
+district	45	gas	453
+district	45	paraffin stove	685
+district	45	charcoal	29118
+district	45	firewood	54839
+district	45	others	448
+district	52	electricity	187
+district	52	gas	52
+district	52	paraffin stove	50
+district	52	charcoal	2017
+district	52	firewood	26336
+district	52	others	520
+district	14	electricity	369
+district	14	gas	132
+district	14	paraffin stove	233
+district	14	charcoal	7282
+district	14	firewood	31289
+district	14	others	309
+district	53	electricity	293
+district	53	gas	176
+district	53	paraffin stove	264
+district	53	charcoal	7656
+district	53	firewood	21442
+district	53	others	277
+district	300	electricity	447
+district	300	gas	182
+district	300	paraffin stove	292
+district	300	charcoal	1169
+district	300	firewood	45907
+district	300	others	178
+district	46	electricity	247
+district	46	gas	45
+district	46	paraffin stove	54
+district	46	charcoal	2640
+district	46	firewood	22487
+district	46	others	349
+district	343	electricity	165
+district	343	gas	96
+district	343	paraffin stove	191
+district	343	charcoal	1053
+district	343	firewood	25346
+district	343	others	137
+district	6	electricity	1208
+district	6	gas	460
+district	6	paraffin stove	710
+district	6	charcoal	28611
+district	6	firewood	56352
+district	6	others	1091
+district	348	electricity	305
+district	348	gas	120
+district	348	paraffin stove	218
+district	348	charcoal	1054
+district	348	firewood	34290
+district	348	others	97
+district	93	electricity	375
+district	93	gas	135
+district	93	paraffin stove	77
+district	93	charcoal	3848
+district	93	firewood	17044
+district	93	others	286
+district	47	electricity	146
+district	47	gas	40
+district	47	paraffin stove	170
+district	47	charcoal	4525
+district	47	firewood	20690
+district	47	others	170
+district	111	electricity	199
+district	111	gas	80
+district	111	paraffin stove	130
+district	111	charcoal	1560
+district	111	firewood	23088
+district	111	others	260
+district	94	electricity	196
+district	94	gas	84
+district	94	paraffin stove	73
+district	94	charcoal	1736
+district	94	firewood	23905
+district	94	others	403
+district	95	electricity	428
+district	95	gas	249
+district	95	paraffin stove	510
+district	95	charcoal	6497
+district	95	firewood	66896
+district	95	others	251
+district	8	electricity	132
+district	8	gas	74
+district	8	paraffin stove	77
+district	8	charcoal	2233
+district	8	firewood	23520
+district	8	others	63
+district	438	electricity	272
+district	438	gas	48
+district	438	paraffin stove	94
+district	438	charcoal	1029
+district	438	firewood	20360
+district	438	others	98
+district	54	electricity	668
+district	54	gas	244
+district	54	paraffin stove	561
+district	54	charcoal	2962
+district	54	firewood	70437
+district	54	others	378
+district	11	electricity	302
+district	11	gas	96
+district	11	paraffin stove	277
+district	11	charcoal	3989
+district	11	firewood	28206
+district	11	others	156
+district	48	electricity	475
+district	48	gas	275
+district	48	paraffin stove	339
+district	48	charcoal	4801
+district	48	firewood	55056
+district	48	others	255
+district	96	electricity	383
+district	96	gas	265
+district	96	paraffin stove	331
+district	96	charcoal	3430
+district	96	firewood	44662
+district	96	others	165
+district	100	electricity	495
+district	100	gas	131
+district	100	paraffin stove	155
+district	100	charcoal	892
+district	100	firewood	22416
+district	100	others	85
+district	66	electricity	146
+district	66	gas	74
+district	66	paraffin stove	134
+district	66	charcoal	4144
+district	66	firewood	17018
+district	66	others	136
+district	107	electricity	593
+district	107	gas	254
+district	107	paraffin stove	418
+district	107	charcoal	6562
+district	107	firewood	36665
+district	107	others	274
+district	103	electricity	1088
+district	103	gas	332
+district	103	paraffin stove	747
+district	103	charcoal	6827
+district	103	firewood	41827
+district	103	others	293
+district	55	electricity	1604
+district	55	gas	585
+district	55	paraffin stove	812
+district	55	charcoal	20954
+district	55	firewood	100696
+district	55	others	703
+district	366	electricity	851
+district	366	gas	248
+district	366	paraffin stove	464
+district	366	charcoal	6483
+district	366	firewood	46141
+district	366	others	499
+district	3	electricity	1431
+district	3	gas	284
+district	3	paraffin stove	751
+district	3	charcoal	10377
+district	3	firewood	86303
+district	3	others	2033
+district	56	electricity	2073
+district	56	gas	429
+district	56	paraffin stove	519
+district	56	charcoal	13609
+district	56	firewood	100102
+district	56	others	918
+district	57	electricity	2272
+district	57	gas	722
+district	57	paraffin stove	1372
+district	57	charcoal	12058
+district	57	firewood	88833
+district	57	others	1012
+district	64	electricity	1247
+district	64	gas	383
+district	64	paraffin stove	423
+district	64	charcoal	6356
+district	64	firewood	78958
+district	64	others	447
+district	65	electricity	880
+district	65	gas	201
+district	65	paraffin stove	347
+district	65	charcoal	4508
+district	65	firewood	49306
+district	65	others	274
+district	58	electricity	2947
+district	58	gas	526
+district	58	paraffin stove	1498
+district	58	charcoal	28120
+district	58	firewood	103826
+district	58	others	1233
+district	59	electricity	2178
+district	59	gas	565
+district	59	paraffin stove	748
+district	59	charcoal	15735
+district	59	firewood	147707
+district	59	others	758
+district	4	electricity	830
+district	4	gas	427
+district	4	paraffin stove	592
+district	4	charcoal	7154
+district	4	firewood	57153
+district	4	others	583
+district	98	electricity	464
+district	98	gas	177
+district	98	paraffin stove	357
+district	98	charcoal	8776
+district	98	firewood	41949
+district	98	others	273
+district	60	electricity	1099
+district	60	gas	192
+district	60	paraffin stove	248
+district	60	charcoal	4342
+district	60	firewood	54543
+district	60	others	1533
+district	70	electricity	754
+district	70	gas	308
+district	70	paraffin stove	199
+district	70	charcoal	5068
+district	70	firewood	53331
+district	70	others	302
+district	69	electricity	1327
+district	69	gas	427
+district	69	paraffin stove	575
+district	69	charcoal	5961
+district	69	firewood	82572
+district	69	others	574
+district	97	electricity	2083
+district	97	gas	283
+district	97	paraffin stove	652
+district	97	charcoal	14199
+district	97	firewood	47046
+district	97	others	288
+district	61	electricity	3786
+district	61	gas	1152
+district	61	paraffin stove	2250
+district	61	charcoal	33677
+district	61	firewood	69924
+district	61	others	1439
+district	102	electricity	747
+district	102	gas	144
+district	102	paraffin stove	296
+district	102	charcoal	1946
+district	102	firewood	36237
+district	102	others	327
+district	436	electricity	134
+district	436	gas	63
+district	436	paraffin stove	113
+district	436	charcoal	3771
+district	436	firewood	9445
+district	436	others	392
+district	62	electricity	1385
+district	62	gas	420
+district	62	paraffin stove	623
+district	62	charcoal	11392
+district	62	firewood	85832
+district	62	others	1750
+district	101	electricity	395
+district	101	gas	74
+district	101	paraffin stove	265
+district	101	charcoal	3090
+district	101	firewood	24618
+district	101	others	172
+district	63	electricity	1135
+district	63	gas	302
+district	63	paraffin stove	491
+district	63	charcoal	6437
+district	63	firewood	60244
+district	63	others	439
+district	456	electricity	732
+district	456	gas	201
+district	456	paraffin stove	512
+district	456	charcoal	4914
+district	456	firewood	38583
+district	456	others	797
+\.
+
+
+--
+-- Data for Name: householddistributionbylightsource; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY householddistributionbylightsource (geo_level, geo_code, "household distribution by light source", total) FROM stdin;
+district	80	electricity	26984
+district	80	gas	383
+district	80	paraffin lantern	12170
+district	80	paraffin tadooba	49111
+district	80	candles	4424
+district	80	firewood	537
+district	80	others	4324
+district	16	electricity	5194
+district	16	gas	100
+district	16	paraffin lantern	4015
+district	16	paraffin tadooba	22539
+district	16	candles	537
+district	16	firewood	259
+district	16	others	1691
+district	67	electricity	4081
+district	67	gas	79
+district	67	paraffin lantern	3532
+district	67	paraffin tadooba	12468
+district	67	candles	814
+district	67	firewood	153
+district	67	others	474
+district	74	electricity	1825
+district	74	gas	76
+district	74	paraffin lantern	1356
+district	74	paraffin tadooba	14951
+district	74	candles	1063
+district	74	firewood	221
+district	74	others	5692
+district	19	electricity	4656
+district	19	gas	162
+district	19	paraffin lantern	2990
+district	19	paraffin tadooba	24041
+district	19	candles	772
+district	19	firewood	305
+district	19	others	2359
+district	1	electricity	2751
+district	1	gas	41
+district	1	paraffin lantern	2939
+district	1	paraffin tadooba	9172
+district	1	candles	1299
+district	1	firewood	103
+district	1	others	3795
+district	85	electricity	8166
+district	85	gas	203
+district	85	paraffin lantern	5233
+district	85	paraffin tadooba	25672
+district	85	candles	795
+district	85	firewood	274
+district	85	others	1094
+district	20	electricity	349178
+district	20	gas	1183
+district	20	paraffin lantern	19409
+district	20	paraffin tadooba	11511
+district	20	candles	29114
+district	20	firewood	95
+district	20	others	5604
+district	26	electricity	11395
+district	26	gas	250
+district	26	paraffin lantern	6675
+district	26	paraffin tadooba	51351
+district	26	candles	2090
+district	26	firewood	678
+district	26	others	3634
+district	109	electricity	5441
+district	109	gas	128
+district	109	paraffin lantern	3759
+district	109	paraffin tadooba	18551
+district	109	candles	1334
+district	109	firewood	361
+district	109	others	4498
+district	108	electricity	5192
+district	108	gas	223
+district	108	paraffin lantern	3946
+district	108	paraffin tadooba	28168
+district	108	candles	2897
+district	108	firewood	726
+district	108	others	6619
+district	21	electricity	28172
+district	21	gas	472
+district	21	paraffin lantern	15278
+district	21	paraffin tadooba	50894
+district	21	candles	4250
+district	21	firewood	614
+district	21	others	5666
+district	17	electricity	11184
+district	17	gas	240
+district	17	paraffin lantern	6702
+district	17	paraffin tadooba	39785
+district	17	candles	1545
+district	17	firewood	527
+district	17	others	1817
+district	28	electricity	4300
+district	28	gas	100
+district	28	paraffin lantern	3058
+district	28	paraffin tadooba	10565
+district	28	candles	833
+district	28	firewood	275
+district	28	others	1508
+district	18	electricity	28225
+district	18	gas	260
+district	18	paraffin lantern	9936
+district	18	paraffin tadooba	31791
+district	18	candles	2640
+district	18	firewood	304
+district	18	others	2609
+district	29	electricity	18414
+district	29	gas	396
+district	29	paraffin lantern	8071
+district	29	paraffin tadooba	45878
+district	29	candles	2600
+district	29	firewood	589
+district	29	others	4139
+district	68	electricity	13314
+district	68	gas	388
+district	68	paraffin lantern	9140
+district	68	paraffin tadooba	31103
+district	68	candles	2398
+district	68	firewood	590
+district	68	others	3588
+district	22	electricity	22071
+district	22	gas	772
+district	22	paraffin lantern	10581
+district	22	paraffin tadooba	100709
+district	22	candles	5452
+district	22	firewood	1767
+district	22	others	9925
+district	79	electricity	47918
+district	79	gas	852
+district	79	paraffin lantern	21597
+district	79	paraffin tadooba	59521
+district	79	candles	6290
+district	79	firewood	959
+district	79	others	7495
+district	30	electricity	8289
+district	30	gas	345
+district	30	paraffin lantern	6052
+district	30	paraffin tadooba	23811
+district	30	candles	1709
+district	30	firewood	414
+district	30	others	2695
+district	23	electricity	5747
+district	23	gas	215
+district	23	paraffin lantern	5057
+district	23	paraffin tadooba	15096
+district	23	candles	2052
+district	23	firewood	349
+district	23	others	7862
+district	24	electricity	17038
+district	24	gas	668
+district	24	paraffin lantern	10942
+district	24	paraffin tadooba	79472
+district	24	candles	3226
+district	24	firewood	1544
+district	24	others	3602
+district	25	electricity	7878
+district	25	gas	337
+district	25	paraffin lantern	6567
+district	25	paraffin tadooba	33631
+district	25	candles	1400
+district	25	firewood	766
+district	25	others	4606
+district	27	electricity	309133
+district	27	gas	4055
+district	27	paraffin lantern	63304
+district	27	paraffin tadooba	70528
+district	27	candles	33040
+district	27	firewood	1994
+district	27	others	20035
+district	396	electricity	3448
+district	396	gas	144
+district	396	paraffin lantern	2751
+district	396	paraffin tadooba	18140
+district	396	candles	893
+district	396	firewood	1985
+district	396	others	20956
+district	319	electricity	2176
+district	319	gas	72
+district	319	paraffin lantern	2486
+district	319	paraffin tadooba	29929
+district	319	candles	1410
+district	319	firewood	228
+district	319	others	821
+district	37	electricity	1545
+district	37	gas	198
+district	37	paraffin lantern	4246
+district	37	paraffin tadooba	27893
+district	37	candles	1792
+district	37	firewood	556
+district	37	others	594
+district	81	electricity	6213
+district	81	gas	279
+district	81	paraffin lantern	5817
+district	81	paraffin tadooba	55951
+district	81	candles	3533
+district	81	firewood	604
+district	81	others	2114
+district	38	electricity	2098
+district	38	gas	94
+district	38	paraffin lantern	3165
+district	38	paraffin tadooba	22814
+district	38	candles	947
+district	38	firewood	508
+district	38	others	6678
+district	39	electricity	846
+district	39	gas	108
+district	39	paraffin lantern	2697
+district	39	paraffin tadooba	11166
+district	39	candles	1242
+district	39	firewood	531
+district	39	others	48
+district	382	electricity	1849
+district	382	gas	153
+district	382	paraffin lantern	3432
+district	382	paraffin tadooba	26642
+district	382	candles	876
+district	382	firewood	581
+district	382	others	505
+district	83	electricity	7941
+district	83	gas	275
+district	83	paraffin lantern	8331
+district	83	paraffin tadooba	45370
+district	83	candles	1786
+district	83	firewood	350
+district	83	others	735
+district	40	electricity	2284
+district	40	gas	179
+district	40	paraffin lantern	2188
+district	40	paraffin tadooba	36723
+district	40	candles	1744
+district	40	firewood	443
+district	40	others	815
+district	78	electricity	4619
+district	78	gas	299
+district	78	paraffin lantern	2452
+district	78	paraffin tadooba	40818
+district	78	candles	5583
+district	78	firewood	1189
+district	78	others	6268
+district	72	electricity	17450
+district	72	gas	413
+district	72	paraffin lantern	9532
+district	72	paraffin tadooba	64430
+district	72	candles	6370
+district	72	firewood	596
+district	72	others	3881
+district	31	electricity	34172
+district	31	gas	655
+district	31	paraffin lantern	9039
+district	31	paraffin tadooba	52793
+district	31	candles	5370
+district	31	firewood	374
+district	31	others	3060
+district	383	electricity	2052
+district	383	gas	156
+district	383	paraffin lantern	1884
+district	383	paraffin tadooba	22830
+district	383	candles	803
+district	383	firewood	588
+district	383	others	10484
+district	41	electricity	3281
+district	41	gas	103
+district	41	paraffin lantern	1804
+district	41	paraffin tadooba	32023
+district	41	candles	2635
+district	41	firewood	406
+district	41	others	2683
+district	77	electricity	9950
+district	77	gas	371
+district	77	paraffin lantern	5614
+district	77	paraffin tadooba	66628
+district	77	candles	6286
+district	77	firewood	865
+district	77	others	4284
+district	90	electricity	1901
+district	90	gas	119
+district	90	paraffin lantern	3993
+district	90	paraffin tadooba	13437
+district	90	candles	2328
+district	90	firewood	305
+district	90	others	251
+district	32	electricity	1576
+district	32	gas	99
+district	32	paraffin lantern	2148
+district	32	paraffin tadooba	9989
+district	32	candles	982
+district	32	firewood	1326
+district	32	others	14646
+district	75	electricity	1797
+district	75	gas	80
+district	75	paraffin lantern	1598
+district	75	paraffin tadooba	27627
+district	75	candles	2371
+district	75	firewood	351
+district	75	others	1644
+district	323	electricity	3208
+district	323	gas	145
+district	323	paraffin lantern	4014
+district	323	paraffin tadooba	14319
+district	323	candles	1125
+district	323	firewood	644
+district	323	others	17349
+district	91	electricity	698
+district	91	gas	85
+district	91	paraffin lantern	2375
+district	91	paraffin tadooba	9634
+district	91	candles	3801
+district	91	firewood	661
+district	91	others	598
+district	345	electricity	3689
+district	345	gas	189
+district	345	paraffin lantern	1866
+district	345	paraffin tadooba	34818
+district	345	candles	1989
+district	345	firewood	408
+district	345	others	1412
+district	42	electricity	3392
+district	42	gas	347
+district	42	paraffin lantern	7920
+district	42	paraffin tadooba	56400
+district	42	candles	2820
+district	42	firewood	846
+district	42	others	1178
+district	73	electricity	9092
+district	73	gas	599
+district	73	paraffin lantern	5012
+district	73	paraffin tadooba	67036
+district	73	candles	5350
+district	73	firewood	1419
+district	73	others	6799
+district	33	electricity	25585
+district	33	gas	1564
+district	33	paraffin lantern	16061
+district	33	paraffin tadooba	55337
+district	33	candles	4575
+district	33	firewood	1486
+district	33	others	3930
+district	82	electricity	2095
+district	82	gas	285
+district	82	paraffin lantern	2944
+district	82	paraffin tadooba	32903
+district	82	candles	2262
+district	82	firewood	505
+district	82	others	1976
+district	43	electricity	2900
+district	43	gas	147
+district	43	paraffin lantern	2552
+district	43	paraffin tadooba	32785
+district	43	candles	3954
+district	43	firewood	420
+district	43	others	2565
+district	84	electricity	1516
+district	84	gas	67
+district	84	paraffin lantern	1333
+district	84	paraffin tadooba	6092
+district	84	candles	460
+district	84	firewood	446
+district	84	others	13734
+district	76	electricity	3810
+district	76	gas	222
+district	76	paraffin lantern	4498
+district	76	paraffin tadooba	42715
+district	76	candles	2639
+district	76	firewood	908
+district	76	others	10972
+district	87	electricity	3152
+district	87	gas	339
+district	87	paraffin lantern	3627
+district	87	paraffin tadooba	15546
+district	87	candles	2003
+district	87	firewood	1530
+district	87	others	21479
+district	89	electricity	4587
+district	89	gas	614
+district	89	paraffin lantern	8626
+district	89	paraffin tadooba	36862
+district	89	candles	1550
+district	89	firewood	682
+district	89	others	2105
+district	88	electricity	8123
+district	88	gas	297
+district	88	paraffin lantern	5663
+district	88	paraffin tadooba	23212
+district	88	candles	2408
+district	88	firewood	1476
+district	88	others	13767
+district	34	electricity	10863
+district	34	gas	834
+district	34	paraffin lantern	8229
+district	34	paraffin tadooba	73581
+district	34	candles	3327
+district	34	firewood	1370
+district	34	others	4430
+district	49	electricity	905
+district	49	gas	64
+district	49	paraffin lantern	2033
+district	49	paraffin tadooba	3145
+district	49	candles	1942
+district	49	firewood	2179
+district	49	others	7813
+district	44	electricity	3640
+district	44	gas	148
+district	44	paraffin lantern	3918
+district	44	paraffin tadooba	9800
+district	44	candles	1924
+district	44	firewood	2131
+district	44	others	19598
+district	10	electricity	2438
+district	10	gas	254
+district	10	paraffin lantern	10502
+district	10	paraffin tadooba	20478
+district	10	candles	969
+district	10	firewood	1814
+district	10	others	6899
+district	7	electricity	1862
+district	7	gas	210
+district	7	paraffin lantern	4885
+district	7	paraffin tadooba	28847
+district	7	candles	588
+district	7	firewood	809
+district	7	others	9057
+district	50	electricity	2583
+district	50	gas	91
+district	50	paraffin lantern	2968
+district	50	paraffin tadooba	10092
+district	50	candles	765
+district	50	firewood	490
+district	50	others	10994
+district	110	electricity	293
+district	110	gas	144
+district	110	paraffin lantern	2086
+district	110	paraffin tadooba	1372
+district	110	candles	655
+district	110	firewood	10082
+district	110	others	864
+district	9	electricity	2352
+district	9	gas	311
+district	9	paraffin lantern	7156
+district	9	paraffin tadooba	22281
+district	9	candles	1641
+district	9	firewood	1272
+district	9	others	1689
+district	12	electricity	4332
+district	12	gas	481
+district	12	paraffin lantern	9183
+district	12	paraffin tadooba	29046
+district	12	candles	1645
+district	12	firewood	1221
+district	12	others	25747
+district	104	electricity	15915
+district	104	gas	508
+district	104	paraffin lantern	39272
+district	104	paraffin tadooba	75451
+district	104	candles	1592
+district	104	firewood	3601
+district	104	others	10336
+district	51	electricity	2293
+district	51	gas	162
+district	51	paraffin lantern	5435
+district	51	paraffin tadooba	18280
+district	51	candles	644
+district	51	firewood	489
+district	51	others	7579
+district	45	electricity	13384
+district	45	gas	456
+district	45	paraffin lantern	16382
+district	45	paraffin tadooba	49511
+district	45	candles	3450
+district	45	firewood	1038
+district	45	others	2703
+district	52	electricity	777
+district	52	gas	85
+district	52	paraffin lantern	568
+district	52	paraffin tadooba	246
+district	52	candles	2477
+district	52	firewood	17994
+district	52	others	7063
+district	14	electricity	4579
+district	14	gas	169
+district	14	paraffin lantern	7810
+district	14	paraffin tadooba	16036
+district	14	candles	1670
+district	14	firewood	2197
+district	14	others	7227
+district	53	electricity	3892
+district	53	gas	126
+district	53	paraffin lantern	4246
+district	53	paraffin tadooba	7174
+district	53	candles	505
+district	53	firewood	518
+district	53	others	13829
+district	300	electricity	2817
+district	300	gas	332
+district	300	paraffin lantern	9202
+district	300	paraffin tadooba	26387
+district	300	candles	1160
+district	300	firewood	930
+district	300	others	7598
+district	46	electricity	2049
+district	46	gas	72
+district	46	paraffin lantern	735
+district	46	paraffin tadooba	425
+district	46	candles	1663
+district	46	firewood	10576
+district	46	others	10650
+district	343	electricity	1344
+district	343	gas	132
+district	343	paraffin lantern	5109
+district	343	paraffin tadooba	9093
+district	343	candles	645
+district	343	firewood	2495
+district	343	others	8433
+district	6	electricity	14047
+district	6	gas	557
+district	6	paraffin lantern	16947
+district	6	paraffin tadooba	39360
+district	6	candles	3357
+district	6	firewood	902
+district	6	others	13963
+district	348	electricity	2158
+district	348	gas	173
+district	348	paraffin lantern	7879
+district	348	paraffin tadooba	23558
+district	348	candles	381
+district	348	firewood	414
+district	348	others	1700
+district	93	electricity	1953
+district	93	gas	116
+district	93	paraffin lantern	574
+district	93	paraffin tadooba	619
+district	93	candles	1971
+district	93	firewood	15022
+district	93	others	1836
+district	47	electricity	2980
+district	47	gas	80
+district	47	paraffin lantern	4540
+district	47	paraffin tadooba	8423
+district	47	candles	803
+district	47	firewood	461
+district	47	others	8585
+district	111	electricity	726
+district	111	gas	102
+district	111	paraffin lantern	829
+district	111	paraffin tadooba	558
+district	111	candles	1421
+district	111	firewood	18901
+district	111	others	2863
+district	94	electricity	761
+district	94	gas	116
+district	94	paraffin lantern	678
+district	94	paraffin tadooba	1087
+district	94	candles	986
+district	94	firewood	19625
+district	94	others	3604
+district	95	electricity	4743
+district	95	gas	383
+district	95	paraffin lantern	11300
+district	95	paraffin tadooba	52543
+district	95	candles	1362
+district	95	firewood	1640
+district	95	others	5426
+district	8	electricity	1369
+district	8	gas	117
+district	8	paraffin lantern	2426
+district	8	paraffin tadooba	19746
+district	8	candles	432
+district	8	firewood	603
+district	8	others	1537
+district	438	electricity	991
+district	438	gas	109
+district	438	paraffin lantern	2426
+district	438	paraffin tadooba	10606
+district	438	candles	346
+district	438	firewood	610
+district	438	others	6867
+district	54	electricity	5268
+district	54	gas	621
+district	54	paraffin lantern	14572
+district	54	paraffin tadooba	41544
+district	54	candles	1742
+district	54	firewood	1806
+district	54	others	10940
+district	11	electricity	2574
+district	11	gas	183
+district	11	paraffin lantern	7496
+district	11	paraffin tadooba	16721
+district	11	candles	907
+district	11	firewood	1649
+district	11	others	4630
+district	48	electricity	3446
+district	48	gas	229
+district	48	paraffin lantern	8568
+district	48	paraffin tadooba	10674
+district	48	candles	1169
+district	48	firewood	2153
+district	48	others	37123
+district	96	electricity	2772
+district	96	gas	385
+district	96	paraffin lantern	5985
+district	96	paraffin tadooba	37057
+district	96	candles	655
+district	96	firewood	1011
+district	96	others	3004
+district	100	electricity	1917
+district	100	gas	188
+district	100	paraffin lantern	2142
+district	100	paraffin tadooba	17512
+district	100	candles	523
+district	100	firewood	518
+district	100	others	2045
+district	66	electricity	1641
+district	66	gas	125
+district	66	paraffin lantern	2761
+district	66	paraffin tadooba	13508
+district	66	candles	337
+district	66	firewood	241
+district	66	others	3039
+district	107	electricity	4995
+district	107	gas	447
+district	107	paraffin lantern	5670
+district	107	paraffin tadooba	25037
+district	107	candles	2822
+district	107	firewood	920
+district	107	others	4927
+district	103	electricity	10060
+district	103	gas	331
+district	103	paraffin lantern	12650
+district	103	paraffin tadooba	24187
+district	103	candles	1594
+district	103	firewood	365
+district	103	others	2191
+district	55	electricity	21074
+district	55	gas	566
+district	55	paraffin lantern	9274
+district	55	paraffin tadooba	73058
+district	55	candles	5267
+district	55	firewood	1967
+district	55	others	14348
+district	366	electricity	8289
+district	366	gas	473
+district	366	paraffin lantern	7622
+district	366	paraffin tadooba	33167
+district	366	candles	2066
+district	366	firewood	526
+district	366	others	2863
+district	3	electricity	11356
+district	3	gas	401
+district	3	paraffin lantern	10775
+district	3	paraffin tadooba	64319
+district	3	candles	3500
+district	3	firewood	2175
+district	3	others	9064
+district	56	electricity	13993
+district	56	gas	414
+district	56	paraffin lantern	15555
+district	56	paraffin tadooba	56135
+district	56	candles	12854
+district	56	firewood	3729
+district	56	others	15174
+district	57	electricity	19335
+district	57	gas	490
+district	57	paraffin lantern	9225
+district	57	paraffin tadooba	67141
+district	57	candles	3063
+district	57	firewood	1170
+district	57	others	6836
+district	64	electricity	8145
+district	64	gas	496
+district	64	paraffin lantern	6257
+district	64	paraffin tadooba	56333
+district	64	candles	2474
+district	64	firewood	2151
+district	64	others	12830
+district	65	electricity	6412
+district	65	gas	207
+district	65	paraffin lantern	8669
+district	65	paraffin tadooba	29188
+district	65	candles	2656
+district	65	firewood	790
+district	65	others	8053
+district	58	electricity	23650
+district	58	gas	538
+district	58	paraffin lantern	13156
+district	58	paraffin tadooba	92847
+district	58	candles	4525
+district	58	firewood	1300
+district	58	others	3050
+district	59	electricity	26367
+district	59	gas	691
+district	59	paraffin lantern	8490
+district	59	paraffin tadooba	100961
+district	59	candles	6556
+district	59	firewood	2108
+district	59	others	23149
+district	4	electricity	9900
+district	4	gas	441
+district	4	paraffin lantern	11400
+district	4	paraffin tadooba	30537
+district	4	candles	2772
+district	4	firewood	1251
+district	4	others	10923
+district	98	electricity	6517
+district	98	gas	241
+district	98	paraffin lantern	7986
+district	98	paraffin tadooba	29185
+district	98	candles	2655
+district	98	firewood	1389
+district	98	others	4185
+district	60	electricity	4710
+district	60	gas	269
+district	60	paraffin lantern	4116
+district	60	paraffin tadooba	40694
+district	60	candles	2292
+district	60	firewood	1797
+district	60	others	8369
+district	70	electricity	6973
+district	70	gas	372
+district	70	paraffin lantern	3694
+district	70	paraffin tadooba	37921
+district	70	candles	2004
+district	70	firewood	1008
+district	70	others	8089
+district	69	electricity	10266
+district	69	gas	392
+district	69	paraffin lantern	6036
+district	69	paraffin tadooba	59584
+district	69	candles	2787
+district	69	firewood	1715
+district	69	others	10754
+district	97	electricity	13247
+district	97	gas	338
+district	97	paraffin lantern	7113
+district	97	paraffin tadooba	36526
+district	97	candles	2397
+district	97	firewood	1069
+district	97	others	4245
+district	61	electricity	37516
+district	61	gas	622
+district	61	paraffin lantern	16448
+district	61	paraffin tadooba	46931
+district	61	candles	6137
+district	61	firewood	687
+district	61	others	4508
+district	102	electricity	4149
+district	102	gas	273
+district	102	paraffin lantern	6082
+district	102	paraffin tadooba	25928
+district	102	candles	785
+district	102	firewood	327
+district	102	others	2272
+district	436	electricity	1531
+district	436	gas	77
+district	436	paraffin lantern	1337
+district	436	paraffin tadooba	7255
+district	436	candles	707
+district	436	firewood	215
+district	436	others	2820
+district	62	electricity	12662
+district	62	gas	699
+district	62	paraffin lantern	12893
+district	62	paraffin tadooba	67088
+district	62	candles	2809
+district	62	firewood	886
+district	62	others	4759
+district	101	electricity	3280
+district	101	gas	161
+district	101	paraffin lantern	2789
+district	101	paraffin tadooba	20437
+district	101	candles	744
+district	101	firewood	231
+district	101	others	1147
+district	63	electricity	9840
+district	63	gas	485
+district	63	paraffin lantern	12133
+district	63	paraffin tadooba	39791
+district	63	candles	2646
+district	63	firewood	861
+district	63	others	3741
+district	456	electricity	8320
+district	456	gas	307
+district	456	paraffin lantern	9867
+district	456	paraffin tadooba	24307
+district	456	candles	1220
+district	456	firewood	266
+district	456	others	1763
 \.
 
 
@@ -1951,6 +3451,22 @@ ALTER TABLE ONLY django_site
 
 ALTER TABLE ONLY household
     ADD CONSTRAINT household_pkey PRIMARY KEY (geo_level, geo_code, household);
+
+
+--
+-- Name: householddistributionbyenergysource_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY householddistributionbyenergysource
+    ADD CONSTRAINT householddistributionbyenergysource_pkey PRIMARY KEY (geo_level, geo_code, "household distribution by energy source");
+
+
+--
+-- Name: householddistributionbylightsource_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY householddistributionbylightsource
+    ADD CONSTRAINT householddistributionbylightsource_pkey PRIMARY KEY (geo_level, geo_code, "household distribution by light source");
 
 
 --
