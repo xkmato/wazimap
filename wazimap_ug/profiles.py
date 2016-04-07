@@ -78,7 +78,35 @@ def get_households_profile(geocode, geo_level, session):
     return final_data
 
 
-PROFILE_SECTIONS = ['demographics', 'households']
+def get_elections2016_profile(geocode, geo_level, session):
+    try:
+        candidate, total_votes = get_stat_data('presidential candidate', geo_level, geocode, session,
+                                               table_fields=['presidential candidate'])
+    except LocationNotFound:
+        candidate, total_votes = LOCATIONNOTFOUND, -1
+
+    total_besigye = 0
+    for data, value in candidate.get('Kizza besigye', {}).iteritems():
+        if data == 'numerators':
+            total_besigye += value['this']
+
+    final_data = {
+        'candidate_distribution': candidate,
+        'besigye_votes': {
+            'name': 'Besigye Votes',
+            'numerators': {'this': total_besigye},
+            'values': {'this': round(total_besigye / total_votes * 100, 2)}
+        },
+
+        'total_votes': {
+            "name": "Votes",
+            "values": {"this": total_votes}
+        }
+    }
+    return final_data
+
+
+PROFILE_SECTIONS = ['demographics', 'households', 'elections2016']
 
 
 def get_profile(geo_code, geo_level, profile_name=None):
