@@ -1722,6 +1722,36 @@ district	456	paraffin stove	512
 district	456	charcoal	4914
 district	456	firewood	38583
 district	456	others	797
+country	UG	charcoal	1678259
+country	UG	electricity	151062
+country	UG	firewood	5210191
+country	UG	gas	62097
+country	UG	other	61052
+country	UG	paraffin stove	80885
+region	116	electricity	11542
+region	115	gas	7443
+region	114	gas	40278
+region	117	gas	7866
+region	116	gas	4735
+region	116	others	8365
+region	117	others	14613
+region	114	others	26344
+region	115	others	8366
+region	117	paraffin stove	12974
+region	116	paraffin stove	7862
+region	115	paraffin stove	8913
+region	114	paraffin stove	48332
+region	114	charcoal	1031380
+region	115	charcoal	237678
+region	116	charcoal	168767
+region	117	charcoal	204064
+region	115	electricity	20381
+region	114	electricity	86000
+region	117	electricity	28012
+region	115	firewood	1116412
+region	116	firewood	1078812
+region	117	firewood	1383280
+region	114	firewood	1191179
 \.
 
 
@@ -2514,6 +2544,41 @@ district	456	paraffin tadooba	24307
 district	456	candles	1220
 district	456	firewood	266
 district	456	others	1763
+country	UG	candles	422480
+country	UG	electricity	819553
+country	UG	firewood	2560733
+country	UG	gas	1441188
+country	UG	other	733393
+country	UG	paraffin lantern	820056
+country	UG	paraffin tadooba	3676499
+region	116	paraffin lantern	197967
+region	117	paraffin lantern	182158
+region	114	paraffin lantern	255465
+region	115	paraffin lantern	124591
+region	114	candles	117099
+region	115	candles	71678
+region	116	candles	43375
+region	117	candles	69674
+region	115	gas	8365
+region	114	gas	12466
+region	117	gas	8649
+region	116	electricity	106441
+region	116	others	247129
+region	117	others	164648
+region	114	others	118381
+region	115	others	119664
+region	114	paraffin tadooba	953166
+region	115	paraffin tadooba	907416
+region	116	paraffin tadooba	572865
+region	117	paraffin tadooba	962001
+region	116	gas	6477
+region	115	electricity	166978
+region	117	firewood	27355
+region	114	firewood	15704
+region	115	firewood	18584
+region	116	firewood	121753
+region	114	electricity	970196
+region	117	electricity	244355
 \.
 
 
@@ -2746,6 +2811,16 @@ district	63	rural	271088
 district	63	urban	43606
 district	456	rural	159963
 district	456	urban	47380
+country	UG	rural	27208786
+country	UG	urban	7425864
+region	114	rural	6235020
+region	115	rural	6197190
+region	116	rural	6093213
+region	117	rural	6440910
+region	114	urban	3989199
+region	115	urban	1019328
+region	116	urban	911389
+region	117	urban	1214987
 \.
 
 
@@ -2978,6 +3053,16 @@ district	63	male	152070
 district	63	female	162624
 district	456	male	101032
 district	456	female	106311
+country	UG	male	17060832
+country	UG	female	17573818
+region	116	male	3425567
+region	117	male	3773761
+region	114	male	5085778
+region	115	male	3537178
+region	117	female	3882136
+region	116	female	3579035
+region	115	female	3679340
+region	114	female	5138441
 \.
 
 

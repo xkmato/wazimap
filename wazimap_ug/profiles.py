@@ -4,17 +4,20 @@ from wazimap.geo import geo_data
 
 __author__ = 'kenneth'
 
+LOCATIONNOTFOUND = {'name': 'No Data Found', 'numerators': {'this': 0}, 'values': {'this': 0}}
+
 
 def get_demographics_profile(geo_code, geo_level, session):
     try:
         sex_dist_data, total_pop = get_stat_data('sex', geo_level, geo_code, session, table_fields=['sex'])
-        urban_dist_data, _ = get_stat_data('rural or urban', geo_level, geo_code, session, table_fields=['rural or urban'])
+        urban_dist_data, _ = get_stat_data('rural or urban', geo_level, geo_code, session,
+                                           table_fields=['rural or urban'])
     except LocationNotFound:
-        sex_dist_data, total_pop = {}, 1
-        urban_dist_data = {'Urban': {}, 'Rural': {}}
+        sex_dist_data, total_pop = LOCATIONNOTFOUND, -1
+        urban_dist_data = LOCATIONNOTFOUND
 
     total_urbanised = 0
-    for data, value in urban_dist_data['Urban'].iteritems():
+    for data, value in urban_dist_data.get('Urban', {}).iteritems():
         if data == 'numerators':
             total_urbanised += value['this']
 
@@ -40,9 +43,9 @@ def get_households_profile(geocode, geo_level, session):
         energy_source, _ = get_stat_data('household distribution by energy source', geo_level, geocode, session,
                                          table_fields=['household distribution by energy source'])
     except LocationNotFound:
-        household_dist, total_households = {}, 1
-        light_source = {}
-        energy_source = {}
+        household_dist, total_households = LOCATIONNOTFOUND, -1
+        light_source = LOCATIONNOTFOUND
+        energy_source = LOCATIONNOTFOUND
 
     total_electrified_lighting = 0
     for data, value in light_source.get('Electricity', {}).iteritems():
