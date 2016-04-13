@@ -106,7 +106,38 @@ def get_elections2016_profile(geocode, geo_level, session):
     return final_data
 
 
-PROFILE_SECTIONS = ['demographics', 'households', 'elections2016']
+def get_disabilities_profile(geocode, geo_level, session):
+    try:
+        disabled_or_not, total_ = get_stat_data('disabled or not', geo_level, geocode, session,
+                                                table_fields=['disabled or not'])
+        disability, _ = get_stat_data('disability', geo_level, geocode, session, table_fields=['disability'])
+    except LocationNotFound:
+        disabled_or_not, total_ = LOCATIONNOTFOUND, -1
+        disability = LOCATIONNOTFOUND
+
+    total_disabled = 0
+    for data, value in disabled_or_not.get('With disability', {}).iteritems():
+        if data == 'numerators':
+            total_disabled += value['this']
+
+    final_data = {
+        'disabled_or_not_distribution': disabled_or_not,
+        'disability': disability,
+        'total_disabled': {
+            'name': 'Disabled',
+            'numerators': {'this': total_disabled},
+            'values': {'this': round(total_disabled / total_ * 100, 2)}
+        },
+
+        'total_': {
+            "name": "Disabled and fully able",
+            "values": {"this": total_}
+        }
+    }
+    return final_data
+
+
+PROFILE_SECTIONS = ['demographics', 'households', 'elections2016', 'disabilities']
 
 
 def get_profile(geo_code, geo_level, profile_name=None):

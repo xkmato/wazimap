@@ -242,6 +242,34 @@ ALTER SEQUENCE auth_user_user_permissions_id_seq OWNED BY auth_user_user_permiss
 
 
 --
+-- Name: disability; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE disability (
+    geo_level character varying(15) NOT NULL,
+    geo_code character varying(10) NOT NULL,
+    disability character varying(128) NOT NULL,
+    total integer NOT NULL
+);
+
+
+ALTER TABLE disability OWNER TO postgres;
+
+--
+-- Name: disabledornot; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE disabledornot (
+    geo_level character varying(15) NOT NULL,
+    geo_code character varying(10) NOT NULL,
+    "disabled or not" character varying(128) NOT NULL,
+    total integer NOT NULL
+);
+
+
+ALTER TABLE disabledornot OWNER TO postgres;
+
+--
 -- Name: django_admin_log; Type: TABLE; Schema: public; Owner: wazimap; Tablespace: 
 --
 
@@ -725,6 +753,724 @@ COPY auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
 --
 
 SELECT pg_catalog.setval('auth_user_user_permissions_id_seq', 1, false);
+
+
+--
+-- Data for Name: disability; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY disability (geo_level, geo_code, disability, total) FROM stdin;
+district	80	seeing disability	24071
+district	80	hearing disability	11655
+district	80	remembering disability	19421
+district	80	walking disability	21233
+district	16	seeing disability	9828
+district	16	hearing disability	4738
+district	16	remembering disability	6793
+district	16	walking disability	7326
+district	67	seeing disability	3406
+district	67	hearing disability	1703
+district	67	remembering disability	1927
+district	67	walking disability	2397
+district	74	seeing disability	6858
+district	74	hearing disability	3401
+district	74	remembering disability	10449
+district	74	walking disability	5550
+district	19	seeing disability	10219
+district	19	hearing disability	5335
+district	19	remembering disability	8092
+district	19	walking disability	8284
+district	1	seeing disability	3520
+district	1	hearing disability	1464
+district	1	remembering disability	3265
+district	1	walking disability	2571
+district	85	seeing disability	12546
+district	85	hearing disability	5786
+district	85	remembering disability	9719
+district	85	walking disability	10480
+district	20	seeing disability	59067
+district	20	hearing disability	15191
+district	20	remembering disability	21567
+district	20	walking disability	26207
+district	26	seeing disability	21633
+district	26	hearing disability	10853
+district	26	remembering disability	16223
+district	26	walking disability	16935
+district	109	seeing disability	10545
+district	109	hearing disability	5224
+district	109	remembering disability	9705
+district	109	walking disability	8975
+district	108	seeing disability	13524
+district	108	hearing disability	6842
+district	108	remembering disability	13807
+district	108	walking disability	10132
+district	21	seeing disability	26428
+district	21	hearing disability	11559
+district	21	remembering disability	20944
+district	21	walking disability	19219
+district	17	seeing disability	15688
+district	17	hearing disability	8234
+district	17	remembering disability	14927
+district	17	walking disability	13044
+district	28	seeing disability	5628
+district	28	hearing disability	2776
+district	28	remembering disability	4321
+district	28	walking disability	3656
+district	18	seeing disability	14226
+district	18	hearing disability	6184
+district	18	remembering disability	10713
+district	18	walking disability	11726
+district	29	seeing disability	21479
+district	29	hearing disability	9482
+district	29	remembering disability	16489
+district	29	walking disability	17175
+district	68	seeing disability	13648
+district	68	hearing disability	6079
+district	68	remembering disability	8009
+district	68	walking disability	9702
+district	22	seeing disability	39628
+district	22	hearing disability	20871
+district	22	remembering disability	38068
+district	22	walking disability	31240
+district	79	seeing disability	32500
+district	79	hearing disability	13567
+district	79	remembering disability	25092
+district	79	walking disability	23724
+district	30	seeing disability	10351
+district	30	hearing disability	4764
+district	30	remembering disability	7088
+district	30	walking disability	7263
+district	23	seeing disability	13554
+district	23	hearing disability	6278
+district	23	remembering disability	12879
+district	23	walking disability	10499
+district	24	seeing disability	23986
+district	24	hearing disability	13354
+district	24	remembering disability	18951
+district	24	walking disability	17687
+district	25	seeing disability	14871
+district	25	hearing disability	8134
+district	25	remembering disability	13927
+district	25	walking disability	11218
+district	27	seeing disability	74378
+district	27	hearing disability	26254
+district	27	remembering disability	36683
+district	27	walking disability	43795
+district	396	seeing disability	20815
+district	396	hearing disability	11109
+district	396	remembering disability	27724
+district	396	walking disability	16394
+district	319	seeing disability	10102
+district	319	hearing disability	6086
+district	319	remembering disability	10878
+district	319	walking disability	7474
+district	37	seeing disability	13909
+district	37	hearing disability	8341
+district	37	remembering disability	13969
+district	37	walking disability	10680
+district	81	seeing disability	25388
+district	81	hearing disability	13977
+district	81	remembering disability	22599
+district	81	walking disability	18574
+district	38	seeing disability	10069
+district	38	hearing disability	4983
+district	38	remembering disability	8835
+district	38	walking disability	7089
+district	39	seeing disability	4190
+district	39	hearing disability	2542
+district	39	remembering disability	3220
+district	39	walking disability	4067
+district	382	seeing disability	14767
+district	382	hearing disability	8808
+district	382	remembering disability	17397
+district	382	walking disability	12389
+district	83	seeing disability	17402
+district	83	hearing disability	8897
+district	83	remembering disability	12388
+district	83	walking disability	11853
+district	40	seeing disability	16280
+district	40	hearing disability	10414
+district	40	remembering disability	23311
+district	40	walking disability	12412
+district	78	seeing disability	23482
+district	78	hearing disability	11756
+district	78	remembering disability	23514
+district	78	walking disability	16820
+district	72	seeing disability	32867
+district	72	hearing disability	16394
+district	72	remembering disability	27992
+district	72	walking disability	28097
+district	31	seeing disability	27320
+district	31	hearing disability	11872
+district	31	remembering disability	22327
+district	31	walking disability	20600
+district	383	seeing disability	17815
+district	383	hearing disability	9782
+district	383	remembering disability	17865
+district	383	walking disability	11457
+district	41	seeing disability	16349
+district	41	hearing disability	8407
+district	41	remembering disability	14322
+district	41	walking disability	11506
+district	77	seeing disability	31884
+district	77	hearing disability	16664
+district	77	remembering disability	24470
+district	77	walking disability	24914
+district	90	seeing disability	7175
+district	90	hearing disability	4131
+district	90	remembering disability	8981
+district	90	walking disability	7137
+district	32	seeing disability	13162
+district	32	hearing disability	8011
+district	32	remembering disability	16010
+district	32	walking disability	10874
+district	75	seeing disability	10398
+district	75	hearing disability	6464
+district	75	remembering disability	11797
+district	75	walking disability	7433
+district	323	seeing disability	13839
+district	323	hearing disability	6204
+district	323	remembering disability	11323
+district	323	walking disability	10545
+district	91	seeing disability	3916
+district	91	hearing disability	1901
+district	91	remembering disability	1734
+district	91	walking disability	3380
+district	345	seeing disability	14192
+district	345	hearing disability	6492
+district	345	remembering disability	8928
+district	345	walking disability	8928
+district	42	seeing disability	31794
+district	42	hearing disability	18442
+district	42	remembering disability	46589
+district	42	walking disability	26820
+district	73	seeing disability	22722
+district	73	hearing disability	9578
+district	73	remembering disability	12429
+district	73	walking disability	12739
+district	33	seeing disability	27428
+district	33	hearing disability	10554
+district	33	remembering disability	11915
+district	33	walking disability	16162
+district	82	seeing disability	14955
+district	82	hearing disability	7776
+district	82	remembering disability	15351
+district	82	walking disability	10682
+district	43	seeing disability	16330
+district	43	hearing disability	9135
+district	43	remembering disability	14705
+district	43	walking disability	12139
+district	84	seeing disability	10353
+district	84	hearing disability	4294
+district	84	remembering disability	7714
+district	84	walking disability	6885
+district	76	seeing disability	24123
+district	76	hearing disability	12708
+district	76	remembering disability	23066
+district	76	walking disability	17261
+district	87	seeing disability	19464
+district	87	hearing disability	9028
+district	87	remembering disability	18286
+district	87	walking disability	14048
+district	89	seeing disability	26561
+district	89	hearing disability	13094
+district	89	remembering disability	26993
+district	89	walking disability	24881
+district	88	seeing disability	20072
+district	88	hearing disability	9441
+district	88	remembering disability	17172
+district	88	walking disability	13413
+district	34	seeing disability	36134
+district	34	hearing disability	20960
+district	34	remembering disability	32270
+district	34	walking disability	24117
+district	49	seeing disability	7395
+district	49	hearing disability	6069
+district	49	remembering disability	7543
+district	49	walking disability	6357
+district	44	seeing disability	9663
+district	44	hearing disability	6171
+district	44	remembering disability	7789
+district	44	walking disability	7448
+district	10	seeing disability	15049
+district	10	hearing disability	11163
+district	10	remembering disability	13872
+district	10	walking disability	10997
+district	7	seeing disability	17861
+district	7	hearing disability	11369
+district	7	remembering disability	17088
+district	7	walking disability	11882
+district	50	seeing disability	16302
+district	50	hearing disability	8578
+district	50	remembering disability	11649
+district	50	walking disability	9063
+district	110	seeing disability	3093
+district	110	hearing disability	2861
+district	110	remembering disability	1415
+district	110	walking disability	2291
+district	9	seeing disability	10865
+district	9	hearing disability	7123
+district	9	remembering disability	11430
+district	9	walking disability	8182
+district	12	seeing disability	39642
+district	12	hearing disability	23725
+district	12	remembering disability	36150
+district	12	walking disability	21248
+district	104	seeing disability	47539
+district	104	hearing disability	23290
+district	104	remembering disability	28226
+district	104	walking disability	28970
+district	51	seeing disability	17421
+district	51	hearing disability	8991
+district	51	remembering disability	13811
+district	51	walking disability	8974
+district	45	seeing disability	26621
+district	45	hearing disability	15114
+district	45	remembering disability	19330
+district	45	walking disability	17218
+district	52	seeing disability	9376
+district	52	hearing disability	6824
+district	52	remembering disability	6688
+district	52	walking disability	8303
+district	14	seeing disability	14451
+district	14	hearing disability	9001
+district	14	remembering disability	11994
+district	14	walking disability	10160
+district	53	seeing disability	10687
+district	53	hearing disability	5874
+district	53	remembering disability	7736
+district	53	walking disability	8422
+district	300	seeing disability	20915
+district	300	hearing disability	12950
+district	300	remembering disability	16068
+district	300	walking disability	12560
+district	46	seeing disability	5893
+district	46	hearing disability	5187
+district	46	remembering disability	4049
+district	46	walking disability	5117
+district	343	seeing disability	10275
+district	343	hearing disability	6786
+district	343	remembering disability	11481
+district	343	walking disability	8541
+district	6	seeing disability	33888
+district	6	hearing disability	17615
+district	6	remembering disability	25600
+district	6	walking disability	18955
+district	348	seeing disability	13885
+district	348	hearing disability	7020
+district	348	remembering disability	9325
+district	348	walking disability	9220
+district	93	seeing disability	3684
+district	93	hearing disability	2459
+district	93	remembering disability	2315
+district	93	walking disability	2898
+district	47	seeing disability	7247
+district	47	hearing disability	4680
+district	47	remembering disability	4688
+district	47	walking disability	5101
+district	111	seeing disability	5697
+district	111	hearing disability	4706
+district	111	remembering disability	3797
+district	111	walking disability	4617
+district	94	seeing disability	6031
+district	94	hearing disability	4229
+district	94	remembering disability	2776
+district	94	walking disability	4668
+district	95	seeing disability	31629
+district	95	hearing disability	16434
+district	95	remembering disability	22598
+district	95	walking disability	22756
+district	8	seeing disability	11807
+district	8	hearing disability	7754
+district	8	remembering disability	13843
+district	8	walking disability	8342
+district	438	seeing disability	10135
+district	438	hearing disability	7116
+district	438	remembering disability	11335
+district	438	walking disability	7282
+district	54	seeing disability	31511
+district	54	hearing disability	19147
+district	54	remembering disability	24245
+district	54	walking disability	18094
+district	11	seeing disability	15046
+district	11	hearing disability	9680
+district	11	remembering disability	14743
+district	11	walking disability	11006
+district	48	seeing disability	15887
+district	48	hearing disability	11090
+district	48	remembering disability	8885
+district	48	walking disability	13189
+district	96	seeing disability	22226
+district	96	hearing disability	9785
+district	96	remembering disability	12885
+district	96	walking disability	16285
+district	100	seeing disability	6292
+district	100	hearing disability	3379
+district	100	remembering disability	6878
+district	100	walking disability	4235
+district	66	seeing disability	11987
+district	66	hearing disability	5249
+district	66	remembering disability	8255
+district	66	walking disability	7496
+district	107	seeing disability	15737
+district	107	hearing disability	6568
+district	107	remembering disability	21103
+district	107	walking disability	12234
+district	103	seeing disability	14450
+district	103	hearing disability	6050
+district	103	remembering disability	11362
+district	103	walking disability	8677
+district	55	seeing disability	35088
+district	55	hearing disability	17021
+district	55	remembering disability	29303
+district	55	walking disability	20685
+district	366	seeing disability	16003
+district	366	hearing disability	7535
+district	366	remembering disability	13582
+district	366	walking disability	9222
+district	3	seeing disability	31525
+district	3	hearing disability	15814
+district	3	remembering disability	25922
+district	3	walking disability	18011
+district	56	seeing disability	42224
+district	56	hearing disability	22601
+district	56	remembering disability	40547
+district	56	walking disability	36197
+district	57	seeing disability	31139
+district	57	hearing disability	14422
+district	57	remembering disability	27555
+district	57	walking disability	20783
+district	64	seeing disability	26236
+district	64	hearing disability	13439
+district	64	remembering disability	21037
+district	64	walking disability	14978
+district	65	seeing disability	18607
+district	65	hearing disability	8324
+district	65	remembering disability	13383
+district	65	walking disability	11535
+district	58	seeing disability	32946
+district	58	hearing disability	15128
+district	58	remembering disability	29409
+district	58	walking disability	19910
+district	59	seeing disability	41534
+district	59	hearing disability	21567
+district	59	remembering disability	41049
+district	59	walking disability	26695
+district	4	seeing disability	23129
+district	4	hearing disability	11737
+district	4	remembering disability	24390
+district	4	walking disability	18496
+district	98	seeing disability	17494
+district	98	hearing disability	8826
+district	98	remembering disability	10864
+district	98	walking disability	9972
+district	60	seeing disability	18923
+district	60	hearing disability	10476
+district	60	remembering disability	16964
+district	60	walking disability	13951
+district	70	seeing disability	17042
+district	70	hearing disability	9373
+district	70	remembering disability	16074
+district	70	walking disability	10954
+district	69	seeing disability	24123
+district	69	hearing disability	14316
+district	69	remembering disability	23708
+district	69	walking disability	18289
+district	97	seeing disability	20333
+district	97	hearing disability	8645
+district	97	remembering disability	14724
+district	97	walking disability	11996
+district	61	seeing disability	23838
+district	61	hearing disability	10483
+district	61	remembering disability	17126
+district	61	walking disability	14116
+district	102	seeing disability	15382
+district	102	hearing disability	6708
+district	102	remembering disability	13517
+district	102	walking disability	9593
+district	436	seeing disability	3736
+district	436	hearing disability	1766
+district	436	remembering disability	3621
+district	436	walking disability	2985
+district	62	seeing disability	28315
+district	62	hearing disability	13821
+district	62	remembering disability	22252
+district	62	walking disability	17124
+district	101	seeing disability	9638
+district	101	hearing disability	4485
+district	101	remembering disability	8824
+district	101	walking disability	6710
+district	63	seeing disability	22343
+district	63	hearing disability	9611
+district	63	remembering disability	16675
+district	63	walking disability	14518
+district	456	seeing disability	12655
+district	456	hearing disability	5541
+district	456	remembering disability	10300
+district	456	walking disability	7643
+region	116	walking disability	311184
+region	117	walking disability	327245
+region	114	walking disability	359948
+region	115	walking disability	353942
+region	116	remembering disability	359945
+region	116	hearing disability	273528
+region	115	hearing disability	245155
+region	114	hearing disability	224856
+region	117	hearing disability	242915
+region	117	remembering disability	431512
+region	114	remembering disability	378468
+region	114	seeing disability	514528
+region	117	seeing disability	495379
+region	116	seeing disability	464550
+region	115	seeing disability	475688
+region	115	remembering disability	437159
+country	UG	hearing disability	986454
+country	UG	remembering disability	1607084
+country	UG	seeing disability	1950145
+country	UG	walking disability	1352319
+\.
+
+
+--
+-- Data for Name: disabledornot; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY disabledornot (geo_level, geo_code, "disabled or not", total) FROM stdin;
+district	80	without disability	350347
+district	80	with disability	46583
+district	16	without disability	126904
+district	16	with disability	16976
+district	67	without disability	89472
+district	67	with disability	5943
+district	74	without disability	64018
+district	74	with disability	17117
+district	19	without disability	131481
+district	19	with disability	19089
+district	1	without disability	40011
+district	1	with disability	7447
+district	85	without disability	148174
+district	85	with disability	22331
+district	20	without disability	1336173
+district	20	with disability	91781
+district	26	without disability	309780
+district	26	with disability	39783
+district	109	without disability	116457
+district	109	with disability	20277
+district	108	without disability	172792
+district	108	with disability	27872
+district	21	without disability	380298
+district	21	with disability	49382
+district	17	without disability	229978
+district	17	with disability	30879
+district	28	without disability	78185
+district	28	with disability	10303
+district	18	without disability	247594
+district	18	with disability	27023
+district	29	without disability	270615
+district	29	with disability	38500
+district	68	without disability	210160
+district	68	with disability	22763
+district	22	without disability	555323
+district	22	with disability	76753
+district	79	without disability	501644
+district	79	with disability	59650
+district	30	without disability	156497
+district	30	with disability	18241
+district	23	without disability	141006
+district	23	with disability	27491
+district	24	without disability	439740
+district	24	with disability	45725
+district	25	without disability	209198
+district	25	with disability	28996
+district	27	without disability	1752736
+district	27	with disability	124893
+district	396	without disability	204606
+district	396	with disability	49398
+district	319	without disability	174707
+district	319	with disability	22083
+district	37	without disability	170675
+district	37	with disability	28396
+district	81	without disability	313954
+district	81	with disability	50439
+district	38	without disability	170976
+district	38	with disability	20306
+district	39	without disability	74631
+district	39	with disability	9437
+district	382	without disability	135647
+district	382	with disability	31134
+district	83	without disability	273243
+district	83	with disability	33662
+district	40	without disability	189705
+district	40	with disability	40366
+district	78	without disability	255238
+district	78	with disability	47330
+district	72	without disability	419124
+district	72	with disability	62772
+district	31	without disability	392913
+district	31	with disability	51768
+district	383	without disability	165661
+district	383	with disability	36446
+district	41	without disability	192220
+district	41	with disability	30285
+district	77	without disability	403479
+district	77	with disability	59522
+district	90	without disability	84231
+district	90	with disability	17138
+district	32	without disability	125872
+district	32	with disability	30296
+district	75	without disability	167877
+district	75	with disability	22781
+district	323	without disability	199152
+district	323	with disability	26608
+district	91	without disability	81963
+district	91	with disability	7364
+district	345	without disability	203499
+district	345	with disability	24404
+district	42	without disability	258550
+district	42	with disability	78497
+district	73	without disability	413243
+district	73	with disability	37771
+district	33	without disability	419411
+district	33	with disability	44440
+district	82	without disability	171483
+district	82	with disability	32183
+district	43	without disability	207208
+district	43	with disability	31507
+district	84	without disability	114010
+district	84	with disability	19072
+district	76	without disability	316281
+district	76	with disability	47519
+district	87	without disability	228854
+district	87	with disability	38567
+district	89	without disability	180426
+district	89	with disability	51807
+district	88	without disability	236052
+district	88	with disability	39482
+district	34	without disability	416532
+district	34	with disability	73011
+district	49	without disability	85335
+district	49	with disability	17678
+district	44	without disability	189124
+district	44	with disability	21627
+district	10	without disability	181478
+district	10	with disability	34996
+district	7	without disability	179305
+district	7	with disability	37534
+district	50	without disability	109600
+district	50	with disability	29502
+district	110	without disability	87456
+district	110	with disability	6778
+district	9	without disability	151138
+district	9	with disability	25534
+district	12	without disability	273392
+district	12	with disability	76371
+district	104	without disability	653758
+district	104	with disability	86982
+district	51	without disability	142126
+district	51	with disability	31615
+district	45	without disability	354966
+district	45	with disability	53791
+district	52	without disability	144669
+district	52	with disability	18555
+district	14	without disability	165068
+district	14	with disability	29805
+district	53	without disability	171739
+district	53	with disability	22343
+district	300	without disability	186817
+district	300	with disability	40020
+district	46	without disability	152499
+district	46	with disability	12612
+district	343	without disability	104986
+district	343	with disability	23620
+district	6	without disability	321729
+district	6	with disability	63636
+district	348	without disability	151598
+district	348	with disability	26559
+district	93	without disability	88176
+district	93	with disability	7401
+district	47	without disability	117634
+district	47	with disability	15117
+district	111	without disability	132441
+district	111	with disability	12527
+district	94	without disability	126830
+district	94	with disability	11258
+district	95	without disability	311360
+district	95	with disability	63327
+district	8	without disability	97568
+district	8	with disability	27433
+district	438	without disability	75551
+district	438	with disability	22773
+district	54	without disability	302060
+district	54	with disability	60248
+district	11	without disability	136688
+district	11	with disability	33063
+district	48	without disability	423929
+district	48	with disability	33923
+district	96	without disability	188441
+district	96	with disability	39696
+district	100	without disability	101832
+district	100	with disability	13127
+district	66	without disability	80773
+district	66	with disability	21782
+district	107	without disability	179167
+district	107	with disability	34787
+district	103	without disability	199707
+district	103	with disability	24598
+district	55	without disability	465460
+district	55	with disability	68358
+district	366	without disability	209936
+district	366	with disability	27350
+district	3	without disability	408421
+district	3	with disability	55646
+district	56	without disability	425553
+district	56	with disability	77130
+district	57	without disability	389021
+district	57	with disability	55139
+district	64	without disability	345373
+district	64	with disability	47580
+district	65	without disability	212593
+district	65	with disability	30747
+district	58	without disability	598484
+district	58	with disability	62415
+district	59	without disability	647247
+district	59	with disability	84896
+district	4	without disability	266081
+district	4	with disability	46564
+district	98	without disability	217052
+district	98	with disability	32630
+district	60	without disability	242515
+district	60	with disability	34394
+district	70	without disability	229719
+district	70	with disability	34348
+district	69	without disability	352581
+district	69	with disability	47141
+district	97	without disability	231169
+district	97	with disability	37198
+district	61	without disability	406028
+district	61	with disability	41179
+district	102	without disability	153394
+district	102	with disability	26808
+district	436	without disability	55719
+district	436	with disability	7518
+district	62	without disability	412883
+district	62	with disability	50060
+district	101	without disability	107094
+district	101	with disability	17888
+district	63	without disability	267529
+district	63	with disability	36731
+district	456	without disability	177442
+district	456	with disability	22550
+region	114	with disability	938213
+region	115	with disability	950835
+region	116	with disability	928235
+region	117	with disability	918731
+region	115	without disability	5879907
+region	114	without disability	8657067
+region	117	without disability	6341192
+region	116	without disability	5686753
+country	UG 	with disability	3736014
+country	UG 	without disability	26564919
+\.
 
 
 --
@@ -4547,6 +5293,22 @@ ALTER TABLE ONLY auth_user_user_permissions
 
 ALTER TABLE ONLY auth_user
     ADD CONSTRAINT auth_user_username_key UNIQUE (username);
+
+
+--
+-- Name: disability_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY disability
+    ADD CONSTRAINT disability_pkey PRIMARY KEY (geo_level, geo_code, disability);
+
+
+--
+-- Name: disabledornot_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY disabledornot
+    ADD CONSTRAINT disabledornot_pkey PRIMARY KEY (geo_level, geo_code, "disabled or not");
 
 
 --

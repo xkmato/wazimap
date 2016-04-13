@@ -7,75 +7,94 @@
 {% endblock %}
 
 {% block profile_detail %}
-<article id="demographics" class="clearfix">
-    <header class="section-contents">
-        <h1>Demographics</h1>
-    </header>
-    <div class="section-container">
+    <article id="demographics" class="clearfix">
+        <header class="section-contents">
+            <h1>Demographics</h1>
+        </header>
+        <div class="section-container">
 
-        <section class="clearfix stat-row">
-            <h2 class="header-for-columns"><a class="permalink" href="#pop_count" id="pop_count">Population <i class="fa fa-link"></i></a></h2>
-            <div class="column-quarter">
-                {% include 'profile/_blocks/_stat_list.html' with stat=demographics.total_population stat_type='number' %}
-            </div>
-            <div class="column-quarter" id="chart-pie-demographics-sex_ratio" data-stat-type="percentage" data-chart-title="Sex"></div>
-            <div class="column-quarter">
-                {% include 'profile/_blocks/_stat_list.html' with stat=demographics.urbanised stat_type='percentage' %}
-            </div>
-            <div class="column-quarter" id="chart-bar-demographics-urban_distribution" data-stat-type="percentage" data-chart-title="Urban vs rural"></div>
-        </section>
-    </div>
-</article>
+            <section class="clearfix stat-row">
+                <h2 class="header-for-columns"><a class="permalink" href="#pop_count" id="pop_count">Population <i class="fa fa-link"></i></a></h2>
+                <div class="column-quarter">
+                    {% include 'profile/_blocks/_stat_list.html' with stat=demographics.total_population stat_type='number' %}
+                </div>
+                <div class="column-quarter" id="chart-pie-demographics-sex_ratio" data-stat-type="percentage" data-chart-title="Sex"></div>
+                <div class="column-quarter">
+                    {% include 'profile/_blocks/_stat_list.html' with stat=demographics.urbanised stat_type='percentage' %}
+                </div>
+                <div class="column-quarter" id="chart-bar-demographics-urban_distribution" data-stat-type="percentage" data-chart-title="Urban vs rural"></div>
+            </section>
+        </div>
+    </article>
 
-<article id="households" class="clearfix">
-    <header class="section-contents">
-        <h1>Households</h1>
-    </header>
-    <div class="section-container">
+    <article id="households" class="clearfix">
+        <header class="section-contents">
+            <h1>Households</h1>
+        </header>
+        <div class="section-container">
 
-        <section class="clearfix stat-row">
-            <h2><a class="permalink" href="#households">Households <i class="fa fa-link"></i></a></h2>
-            <div class="column-third">
-                {% include 'profile/_blocks/_stat_list.html' with stat=households.total_households stat_type='number' %}
-            </div>
-        </section>
-        <section class="clearfix stat-row">
-            <h2><a class="permalink" href="#households-energy" id="households-energy">Main source of energy <i class="fa fa-link"></i></a></h2>
-            <div class="column-third">
-                {% include 'profile/_blocks/_stat_list.html' with stat=households.charcoal_energy stat_type='percentage' %}
-            </div>
-            <div class="column-two-thirds" id="chart-histogram-households-energy_source_distribution" data-stat-type="scaled-percentage" data-chart-title="Energy source distribution"></div>
-        </section>
-        <section class="clearfix stat-row">
-            <h2><a class="permalink" href="#households-lighting" id="households-lighting">Main source of lighting <i class="fa fa-link"></i></a></h2>
-            <div class="column-third">
-                {% include 'profile/_blocks/_stat_list.html' with stat=households.electrified_lighting stat_type='percentage' %}
-            </div>
-            <div class="column-two-thirds" id="chart-histogram-households-light_source_distribution" data-stat-type="scaled-percentage" data-chart-title="Lighting type distribution"></div>
-        </section>
+            <section class="clearfix stat-row">
+                <h2><a class="permalink" href="#households">Households <i class="fa fa-link"></i></a></h2>
+                <div class="column-third">
+                    {% include 'profile/_blocks/_stat_list.html' with stat=households.total_households stat_type='number' %}
+                </div>
+            </section>
+            <section class="clearfix stat-row">
+                <h2><a class="permalink" href="#households-energy" id="households-energy">Main source of energy <i class="fa fa-link"></i></a></h2>
+                <div class="column-third">
+                    {% include 'profile/_blocks/_stat_list.html' with stat=households.charcoal_energy stat_type='percentage' %}
+                </div>
+                <div class="column-two-thirds" id="chart-histogram-households-energy_source_distribution" data-stat-type="scaled-percentage" data-chart-title="Energy source distribution"></div>
+            </section>
+            <section class="clearfix stat-row">
+                <h2><a class="permalink" href="#households-lighting" id="households-lighting">Main source of lighting <i class="fa fa-link"></i></a></h2>
+                <div class="column-third">
+                    {% include 'profile/_blocks/_stat_list.html' with stat=households.electrified_lighting stat_type='percentage' %}
+                </div>
+                <div class="column-two-thirds" id="chart-histogram-households-light_source_distribution" data-stat-type="scaled-percentage" data-chart-title="Lighting type distribution"></div>
+            </section>
 
-    </div>
-</article>
+        </div>
+    </article>
 
-<article id="households" class="clearfix">
-    <header class="section-contents">
-        <h1>2016 Elections</h1>
-    </header>
-    <div class="section-container">
+    <article id="elections2016" class="clearfix">
+        <header class="section-contents">
+            <h1>2016 Elections</h1>
+        </header>
+        <div class="section-container">
 
-        <section class="clearfix stat-row">
-            <h2><a class="permalink" href="#elections2016">Votes Cast <i class="fa fa-link"></i></a></h2>
-            <div class="column-third">
-                {% include 'profile/_blocks/_stat_list.html' with stat=elections2016.total_votes stat_type='number' %}
-            </div>
-        </section>
-        <section class="clearfix stat-row">
-            <h2><a class="permalink" href="#elections2016-candidate" id="elections2016-candidate">Besigye Votes <i class="fa fa-link"></i></a></h2>
-            <div class="column-third">
-                {% include 'profile/_blocks/_stat_list.html' with stat=elections2016.besigye_votes stat_type='percentage' %}
-            </div>
-            <div class="column-two-thirds" id="chart-histogram-elections2016-candidate_distribution" data-stat-type="scaled-percentage" data-chart-title="Votes distribution"></div>
-        </section>
-    </div>
-</article>
+            <section class="clearfix stat-row">
+                <h2><a class="permalink" href="#elections2016">Votes Cast <i class="fa fa-link"></i></a></h2>
+                <div class="column-third">
+                    {% include 'profile/_blocks/_stat_list.html' with stat=elections2016.total_votes stat_type='number' %}
+                </div>
+            </section>
+            <section class="clearfix stat-row">
+                <h2><a class="permalink" href="#elections2016-candidate" id="elections2016-candidate">Besigye Votes <i class="fa fa-link"></i></a></h2>
+                <div class="column-third">
+                    {% include 'profile/_blocks/_stat_list.html' with stat=elections2016.besigye_votes stat_type='percentage' %}
+                </div>
+                <div class="column-two-thirds" id="chart-histogram-elections2016-candidate_distribution" data-stat-type="scaled-percentage" data-chart-title="Votes distribution"></div>
+            </section>
+        </div>
+    </article>
+    <article id="disabilities" class="clearfix">
+        <header class="section-contents">
+            <h1>Population with Disability</h1>
+        </header>
+        <div class="section-container">
+
+            <section class="clearfix stat-row">
+                <h2 class="header-for-columns"><a class="permalink" href="#pop_count" id="pop_count">Disabled and Fully able<i class="fa fa-link"></i></a></h2>
+                <div class="column-quarter">
+                    {% include 'profile/_blocks/_stat_list.html' with stat=disabilities.total_ stat_type='number' %}
+                </div>
+                <div class="column-quarter" id="chart-pie-disabilities-disabled_or_not_distribution" data-stat-type="percentage" data-chart-title="Disabled vs Not"></div>
+                <div class="column-quarter">
+                    {% include 'profile/_blocks/_stat_list.html' with stat=disabilities.total_disabled stat_type='percentage' %}
+                </div>
+                <div class="column-quarter" id="chart-bar-disabilities-disability" data-stat-type="percentage" data-chart-title="Type of Disability"></div>
+            </section>
+        </div>
+    </article>
 {% endblock %}
