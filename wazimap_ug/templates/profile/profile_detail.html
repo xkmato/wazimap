@@ -85,11 +85,11 @@
         <div class="section-container">
 
             <section class="clearfix stat-row">
-                <h2 class="header-for-columns"><a class="permalink" href="#pop_count" id="pop_count">Disabled and Fully able<i class="fa fa-link"></i></a></h2>
+                <h2 class="header-for-columns"><a class="permalink" href="#pop_count" id="pop_count">Population <i class="fa fa-link"></i></a></h2>
                 <div class="column-quarter">
                     {% include 'profile/_blocks/_stat_list.html' with stat=disabilities.total_ stat_type='number' %}
                 </div>
-                <div class="column-quarter" id="chart-pie-disabilities-disabled_or_not_distribution" data-stat-type="percentage" data-chart-title="Disabled vs Not"></div>
+                <div class="column-quarter" id="chart-pie-disabilities-disabled_or_not_distribution" data-stat-type="percentage" data-chart-title="With vs Without disability"></div>
                 <div class="column-quarter">
                     {% include 'profile/_blocks/_stat_list.html' with stat=disabilities.total_disabled stat_type='percentage' %}
                 </div>

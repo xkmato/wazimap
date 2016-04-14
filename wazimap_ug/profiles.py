@@ -130,7 +130,7 @@ def get_disabilities_profile(geocode, geo_level, session):
         },
 
         'total_': {
-            "name": "Disabled and fully able",
+            "name": "Population",
             "values": {"this": total_}
         }
     }
