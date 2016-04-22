@@ -38,20 +38,11 @@
                 <div class="column-third">
                     {% include 'profile/_blocks/_stat_list.html' with stat=households.total_households stat_type='number' %}
                 </div>
-            </section>
-            <section class="clearfix stat-row">
-                <h2><a class="permalink" href="#households-energy" id="households-energy">Main source of energy <i class="fa fa-link"></i></a></h2>
+                <div class="column-two-thirds" id="chart-pie-households-energy_source_distribution" data-stat-type="scaled-percentage" data-chart-title="Energy source distribution"></div>
                 <div class="column-third">
-                    {% include 'profile/_blocks/_stat_list.html' with stat=households.charcoal_energy stat_type='percentage' %}
+                    A summary of what the most used source for cooking energy and lighting is.
                 </div>
-                <div class="column-two-thirds" id="chart-histogram-households-energy_source_distribution" data-stat-type="scaled-percentage" data-chart-title="Energy source distribution"></div>
-            </section>
-            <section class="clearfix stat-row">
-                <h2><a class="permalink" href="#households-lighting" id="households-lighting">Main source of lighting <i class="fa fa-link"></i></a></h2>
-                <div class="column-third">
-                    {% include 'profile/_blocks/_stat_list.html' with stat=households.electrified_lighting stat_type='percentage' %}
-                </div>
-                <div class="column-two-thirds" id="chart-histogram-households-light_source_distribution" data-stat-type="scaled-percentage" data-chart-title="Lighting type distribution"></div>
+                <div class="column-two-thirds" id="chart-pie-households-light_source_distribution" data-stat-type="scaled-percentage" data-chart-title="Lighting type distribution"></div>
             </section>
 
         </div>

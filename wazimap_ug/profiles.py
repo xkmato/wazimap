@@ -13,7 +13,7 @@ def get_demographics_profile(geo_code, geo_level, session):
         urban_dist_data, _ = get_stat_data('rural or urban', geo_level, geo_code, session,
                                            table_fields=['rural or urban'])
     except LocationNotFound:
-        sex_dist_data, total_pop = LOCATIONNOTFOUND, -1
+        sex_dist_data, total_pop = LOCATIONNOTFOUND, 0
         urban_dist_data = LOCATIONNOTFOUND
 
     total_urbanised = 0
@@ -27,12 +27,17 @@ def get_demographics_profile(geo_code, geo_level, session):
         'urbanised': {
             'name': 'In urban areas',
             'numerators': {'this': total_urbanised},
-            'values': {'this': round(total_urbanised / total_pop * 100, 2)}
+
         },
         'total_population': {
             "name": "People",
             "values": {"this": total_pop}
         }}
+    try:
+        final_data['urbanised']['values'] = {
+            'this': round(total_urbanised / total_pop * 100, 2)}
+    except ZeroDivisionError:
+        final_data['urbanised']['values'] = {'this': 0}
     return final_data
 
 
@@ -43,9 +48,9 @@ def get_households_profile(geocode, geo_level, session):
         energy_source, _ = get_stat_data('household distribution by energy source', geo_level, geocode, session,
                                          table_fields=['household distribution by energy source'])
     except LocationNotFound:
-        household_dist, total_households = LOCATIONNOTFOUND, -1
+        household_dist, total_households = LOCATIONNOTFOUND, 0
         light_source = LOCATIONNOTFOUND
-        energy_source = LOCATIONNOTFOUND
+        energy_source, _ = LOCATIONNOTFOUND, 0
 
     total_electrified_lighting = 0
     for data, value in light_source.get('Electricity', {}).iteritems():
@@ -62,19 +67,29 @@ def get_households_profile(geocode, geo_level, session):
         'electrified_lighting': {
             'name': 'Lighting with Electricity',
             'numerators': {'this': total_electrified_lighting},
-            'values': {'this': round(total_electrified_lighting / total_households * 100, 2)}
+
         },
         'energy_source_distribution': energy_source,
         'charcoal_energy': {
             'name': 'Cooking with Charcoal',
             'numerators': {'this': total_charcoal_energy},
-            'values': {'this': round(total_charcoal_energy / total_households * 100, 2)}
         },
         'total_households': {
             "name": "Households",
             "values": {"this": total_households}
         }
     }
+    try:
+        final_data['electrified_lighting']['values'] = {
+            'this': round(total_electrified_lighting / total_households * 100, 2)}
+    except ZeroDivisionError:
+        final_data['electrified_lighting']['values'] = {'this': 0}
+
+    try:
+        final_data['charcoal_energy']['values'] = {
+            'this': round(total_electrified_lighting / _ * 100, 2)}
+    except ZeroDivisionError:
+        final_data['charcoal_energy']['values'] = {'this': 0}
     return final_data
 
 
@@ -83,7 +98,7 @@ def get_elections2016_profile(geocode, geo_level, session):
         candidate, total_votes = get_stat_data('presidential candidate', geo_level, geocode, session,
                                                table_fields=['presidential candidate'])
     except LocationNotFound:
-        candidate, total_votes = LOCATIONNOTFOUND, -1
+        candidate, total_votes = LOCATIONNOTFOUND, 0
 
     total_besigye = 0
     for data, value in candidate.get('Kizza besigye', {}).iteritems():
@@ -95,7 +110,7 @@ def get_elections2016_profile(geocode, geo_level, session):
         'besigye_votes': {
             'name': 'Besigye Votes',
             'numerators': {'this': total_besigye},
-            'values': {'this': round(total_besigye / total_votes * 100, 2)}
+
         },
 
         'total_votes': {
@@ -103,6 +118,11 @@ def get_elections2016_profile(geocode, geo_level, session):
             "values": {"this": total_votes}
         }
     }
+    try:
+        final_data['besigye_votes']['values'] = {
+            'this': round(total_besigye / total_votes * 100, 2)}
+    except ZeroDivisionError:
+        final_data['besigye_votes']['values'] = {'this': 0}
     return final_data
 
 
@@ -112,7 +132,7 @@ def get_disabilities_profile(geocode, geo_level, session):
                                                 table_fields=['disabled or not'])
         disability, _ = get_stat_data('disability', geo_level, geocode, session, table_fields=['disability'])
     except LocationNotFound:
-        disabled_or_not, total_ = LOCATIONNOTFOUND, -1
+        disabled_or_not, total_ = LOCATIONNOTFOUND, 0
         disability = LOCATIONNOTFOUND
 
     total_disabled = 0
@@ -126,7 +146,7 @@ def get_disabilities_profile(geocode, geo_level, session):
         'total_disabled': {
             'name': 'Disabled',
             'numerators': {'this': total_disabled},
-            'values': {'this': round(total_disabled / total_ * 100, 2)}
+
         },
 
         'total_': {
@@ -134,6 +154,11 @@ def get_disabilities_profile(geocode, geo_level, session):
             "values": {"this": total_}
         }
     }
+    try:
+        final_data['total_disabled']['values'] = {
+            'this': round(total_disabled / total_ * 100, 2)}
+    except ZeroDivisionError:
+        final_data['total_disabled']['values'] = {'this': 0}
     return final_data
 
 
