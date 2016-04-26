@@ -1,5 +1,5 @@
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wazimap.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wazimap_ug.settings")
 
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
