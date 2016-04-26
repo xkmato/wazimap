@@ -17,7 +17,7 @@ INSTALLED_APPS = ['wazimap_ug'] + INSTALLED_APPS
 
 # Localise this instance of Wazimap
 WAZIMAP['name'] = 'Wazimap Uganda'
-WAZIMAP['url'] = 'http://openug.ballotuganda.org'
+WAZIMAP['url'] = 'http://uganda.wazimap.org'
 WAZIMAP['country_code'] = 'UG'
 WAZIMAP['profile_builder'] = 'wazimap_ug.profiles.get_profile'
 WAZIMAP['levels'] = {
