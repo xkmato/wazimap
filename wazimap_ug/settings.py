@@ -3,6 +3,9 @@ from wazimap.settings import *  # noqa
 
 # DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://wazimap:postgres@localhost/wazimap')
 DATABASE_URL = os.environ.get('DATABASE_URL', 'postgresql://postgres:@localhost/wazimap')
+DJANGO_SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'this is some not so secret key but..')
+DEBUG = os.environ.get('DJANGO_DEBUG', True)
+DJANGO_SETTINGS_MODULE = os.environ.get('DJANGO_SETTINGS_MODULE', 'wazimap_ug.settings')
 
 DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL),
